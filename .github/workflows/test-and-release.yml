@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: ['12.x', '14.x']
 
     steps:
       - name: Checkout code
@@ -33,14 +33,20 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Install Dependencies
         run: npm ci
+
       - name: Perform a type check
         run: npm run build:ts -- --noEmit
         env:
           CI: true
+
       - name: Lint source code
         run: npm run lint
+
       - name: Test package files
         run: npm run test:package
 
