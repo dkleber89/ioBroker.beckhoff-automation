@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 /**
  * Tests whether the given variable is a real object and not an Array
@@ -81,7 +81,7 @@ async function translateGoogle(text: string, targetLang: string): Promise<string
     }
     throw new Error('Invalid response for translate request');
   } catch (e) {
-    if (e.response?.status === 429) {
+    if ((e as AxiosError).response?.status === 429) {
       throw new Error(`Could not translate to "${targetLang}": Rate-limited by Google Translate`);
     } else {
       throw new Error(`Could not translate to "${targetLang}": ${e}`);
