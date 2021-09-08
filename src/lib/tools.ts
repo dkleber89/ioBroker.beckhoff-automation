@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 /**
  * Tests whether the given variable is a real object and not an Array
@@ -17,7 +17,9 @@ export function isObject(it: unknown): it is Record<string, any> {
  * @param it The variable to test
  */
 export function isArray(it: unknown): it is any[] {
-  if (Array.isArray != null) return Array.isArray(it);
+  if (Array.isArray != null) {
+    return Array.isArray(it);
+  }
   return Object.prototype.toString.call(it) === '[object Array]';
 }
 
@@ -30,14 +32,14 @@ export function isArray(it: unknown): it is any[] {
 export async function translateText(text: string, targetLang: string, yandexApiKey?: string): Promise<string> {
   if (targetLang === 'en') {
     return text;
-  } else if (!text) {
+  }
+  if (!text) {
     return '';
   }
   if (yandexApiKey) {
     return translateYandex(text, targetLang, yandexApiKey);
-  } else {
-    return translateGoogle(text, targetLang);
   }
+  return translateGoogle(text, targetLang);
 }
 
 /**
@@ -52,7 +54,7 @@ async function translateYandex(text: string, targetLang: string, apiKey: string)
   }
   try {
     const url = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=${apiKey}&text=${encodeURIComponent(
-      text,
+      text
     )}&lang=en-${targetLang}`;
     const response = await axios({ url, timeout: 15000 });
     if (isArray(response.data?.text)) {
@@ -72,7 +74,7 @@ async function translateYandex(text: string, targetLang: string, apiKey: string)
 async function translateGoogle(text: string, targetLang: string): Promise<string> {
   try {
     const url = `http://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${targetLang}&dt=t&q=${encodeURIComponent(
-      text,
+      text
     )}&ie=UTF-8&oe=UTF-8`;
     const response = await axios({ url, timeout: 15000 });
     if (isArray(response.data)) {
@@ -81,7 +83,7 @@ async function translateGoogle(text: string, targetLang: string): Promise<string
     }
     throw new Error('Invalid response for translate request');
   } catch (e) {
-    if (e.response?.status === 429) {
+    if ((e as AxiosError).response?.status === 429) {
       throw new Error(`Could not translate to "${targetLang}": Rate-limited by Google Translate`);
     } else {
       throw new Error(`Could not translate to "${targetLang}": ${e}`);

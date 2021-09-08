@@ -5,7 +5,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 import * as utils from '@iobroker/adapter-core';
-import { } from 'node-ads';
+import {} from 'node-ads';
 
 // Load your modules here, e.g.:
 // import * as fs from "fs";
@@ -29,15 +29,13 @@ class BeckhoffAutomation extends utils.Adapter {
   private async onReady(): Promise<void> {
     // Initialize your adapter here
 
-    nodeAds.
     // Reset the connection indicator during startup
-    .this
-      .setState('info.connection', false, true);
+    this.setState('info.connection', false, true);
 
     // The adapters config (in the instance object everything under the attribute "native") is accessible via
     // this.config:
-    this.log.info('config option1: ' + this.config.option1);
-    this.log.info('config option2: ' + this.config.option2);
+    this.log.info(`config option1: ${this.config.option1}`);
+    this.log.info(`config option2: ${this.config.option2}`);
 
     /*
 		For every state in the system there has to be also an object of type state
@@ -79,10 +77,10 @@ class BeckhoffAutomation extends utils.Adapter {
 
     // examples for the checkPassword/checkGroup functions
     let result = await this.checkPasswordAsync('admin', 'iobroker');
-    this.log.info('check user admin pw iobroker: ' + result);
+    this.log.info(`check user admin pw iobroker: ${result}`);
 
     result = await this.checkGroupAsync('admin', 'admin');
-    this.log.info('check group user admin group admin: ' + result);
+    this.log.info(`check group user admin group admin: ${result}`);
   }
 
   /**

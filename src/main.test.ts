@@ -8,11 +8,11 @@
 import { expect } from 'chai';
 // import { functionToTest } from "./moduleToTest";
 
-describe('module to test => function to test', () => {
+describe('module to test => function to test', function () {
   // initializing logic
   const expected = 5;
 
-  it(`should return ${expected}`, () => {
+  it(`should return ${expected}`, function () {
     const result = 5;
     // assign result a value from functionToTest
     expect(result).to.equal(expected);
