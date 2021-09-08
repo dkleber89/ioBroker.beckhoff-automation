@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 /**
  * Tests whether the given variable is a real object and not an Array
@@ -17,9 +17,7 @@ export function isObject(it: unknown): it is Record<string, any> {
  * @param it The variable to test
  */
 export function isArray(it: unknown): it is any[] {
-  if (Array.isArray != null) {
-    return Array.isArray(it);
-  }
+  if (Array.isArray != null) return Array.isArray(it);
   return Object.prototype.toString.call(it) === '[object Array]';
 }
 
@@ -32,14 +30,14 @@ export function isArray(it: unknown): it is any[] {
 export async function translateText(text: string, targetLang: string, yandexApiKey?: string): Promise<string> {
   if (targetLang === 'en') {
     return text;
-  }
-  if (!text) {
+  } else if (!text) {
     return '';
   }
   if (yandexApiKey) {
     return translateYandex(text, targetLang, yandexApiKey);
+  } else {
+    return translateGoogle(text, targetLang);
   }
-  return translateGoogle(text, targetLang);
 }
 
 /**
@@ -83,7 +81,7 @@ async function translateGoogle(text: string, targetLang: string): Promise<string
     }
     throw new Error('Invalid response for translate request');
   } catch (e) {
-    if ((e as AxiosError).response?.status === 429) {
+    if (e.response?.status === 429) {
       throw new Error(`Could not translate to "${targetLang}": Rate-limited by Google Translate`);
     } else {
       throw new Error(`Could not translate to "${targetLang}": ${e}`);
