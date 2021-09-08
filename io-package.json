@@ -1,0 +1,93 @@
+{
+    "common": {
+        "name": "beckhoff-automation",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "titleLang": {
+            "en": "Beckhoff ADS",
+            "de": "Beckhoff ADS",
+            "ru": "Beckhoff ADS",
+            "pt": "Beckhoff ADS",
+            "nl": "Beckhoff advertenties",
+            "fr": "Annonces Beckhoff",
+            "it": "Beckhoff ADS",
+            "es": "Beckhoff ADS",
+            "pl": "Reklamy Beckhoff",
+            "zh-cn": "倍福广告"
+        },
+        "desc": {
+            "en": "Communication to a Twincat 2 or 3 Beckhoff PLC",
+            "de": "Kommunikation zu einer Twincat 2 oder 3 Beckhoff SPS",
+            "ru": "Связь с ПЛК Twincat 2 или 3 Beckhoff",
+            "pt": "Comunicação com um PLC Twincat 2 ou 3 Beckhoff",
+            "nl": "Communicatie naar een Twincat 2 of 3 Beckhoff PLC",
+            "fr": "Communication avec un automate Twincat 2 ou 3 Beckhoff",
+            "it": "Comunicazione con un PLC Twincat 2 o 3 Beckhoff",
+            "es": "Comunicación a un PLC Twincat 2 o 3 Beckhoff",
+            "pl": "Komunikacja ze sterownikiem PLC Twincat 2 lub 3 Beckhoff",
+            "zh-cn": "与 Twincat 2 或 3 Beckhoff PLC 的通信"
+        },
+        "authors": ["dkleber89 <dkleber89@gmail.com>"],
+        "keywords": ["Beckhoff", "ADS"],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "build/main.js",
+        "icon": "beckhoff-automation.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/dkleber89/ioBroker.beckhoff-automation/master/admin/beckhoff-automation.png",
+        "readme": "https://github.com/dkleber89/ioBroker.beckhoff-automation/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "hardware",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}
