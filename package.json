@@ -1,6 +1,6 @@
 {
   "name": "iobroker.beckhoff-automation",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "ioBroker Adapter to Communicate with a TwinCat 2 or TwinCat 3 Beckhoff Automation PLC",
   "author": {
     "name": "dkleber89",
