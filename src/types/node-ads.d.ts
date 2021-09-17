@@ -185,28 +185,22 @@ declare module 'node-ads' {
     arrayid?: number;
   }
 
-  interface Datatyp {
-    index: number;
-    version: number;
-    size: number;
-    dataType: number;
-    arrayDim: number;
-    subItems: number;
-    name: string;
-    type: string;
-    comment: string;
-  }
-
   interface AdsDatatyp {
+    index?: number;
     version: number;
     size: number;
     dataType: number;
+    offs?: number;
     arrayDim: number;
     subItems: number;
     name: string;
     type: string;
     comment: string;
-    datatyps?: Datatyp[];
+    datatyps?: AdsDatatyp[];
+    array?: {
+      lBound: number;
+      elements: number;
+    }[];
   }
 
   interface AdsClient extends EventEmitter {
