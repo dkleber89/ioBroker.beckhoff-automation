@@ -1,103 +1,94 @@
 {
-    "common": {
-        "name": "beckhoff-automation",
-        "version": "0.0.1",
-        "news": {
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
-            }
-        },
-        "titleLang": {
-            "en": "Beckhoff Automation ADS",
-            "de": "Beckhoff Automation ADS",
-            "ru": "Beckhoff Automation ADS",
-            "pt": "Anúncios de automação da Beckhoff",
-            "nl": "Beckhoff Automatisering ADS",
-            "fr": "Beckhoff Automation ADS",
-            "it": "Beckhoff Automazione ADS",
-            "es": "ADS de Beckhoff Automation",
-            "pl": "Beckhoff Automation ADS",
-            "zh-cn": "倍福自动化 ADS"
-        },
-        "desc": {
-            "en": "ioBroker Adapter to Communicate with a TwinCat 2 or TwinCat 3 Beckhoff Automation PLC",
-            "de": "ioBroker Adapter um mit einer TwinCat 2 or TwinCat 3 Beckhoff Automation SPS zu kommunizieren",
-            "ru": "Адаптер ioBroker для связи с TwinCat 2 или TwinCat 3 Beckhoff Automation PLC",
-            "pt": "Adaptador ioBroker para comunicação com um PLC de automação TwinCat 2 ou TwinCat 3 Beckhoff",
-            "nl": "ioBroker Adapter om te communiceren met een TwinCat 2 of TwinCat 3 Beckhoff Automation PLC",
-            "fr": "Adaptateur ioBroker pour communiquer avec un automate d'automatisation TwinCat 2 ou TwinCat 3 Beckhoff",
-            "it": "Adattatore ioBroker per comunicare con un PLC di automazione Beckhoff TwinCat 2 o TwinCat 3",
-            "es": "Adaptador ioBroker para comunicarse con un PLC TwinCat 2 o TwinCat 3 Beckhoff Automation",
-            "pl": "Adapter ioBroker do komunikacji z TwinCat 2 lub TwinCat 3 Beckhoff Automation PLC",
-            "zh-cn": "用于与 TwinCat 2 或 TwinCat 3 Beckhoff 自动化 PLC 通信的 ioBroker 适配器"
-        },
-        "authors": [
-            "dkleber89 <dkleber89@gmail.com>"
-        ],
-        "keywords": [
-            "Beckhoff",
-            "ADS",
-            "Communication",
-            "ioBroker",
-            "PLC",
-            "TwinCat",
-            "SmartHome"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "build/main.js",
-        "icon": "beckhoff-automation.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/dkleber89/ioBroker.beckhoff-automation/master/admin/beckhoff-automation.png",
-        "readme": "https://github.com/dkleber89/ioBroker.beckhoff-automation/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "hardware",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "push",
-        "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ]
+  "common": {
+    "name": "beckhoff-automation",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版"
+      }
     },
-    "native": {
-        "option1": true,
-        "option2": "42"
+    "title": "Beckhoff Automation ADS",
+    "titleLang": {
+      "en": "Beckhoff Automation ADS",
+      "de": "Beckhoff Automation ADS",
+      "ru": "Beckhoff Automation ADS",
+      "pt": "Anúncios de automação da Beckhoff",
+      "nl": "Beckhoff Automatisering ADS",
+      "fr": "Beckhoff Automation ADS",
+      "it": "Beckhoff Automazione ADS",
+      "es": "ADS de Beckhoff Automation",
+      "pl": "Beckhoff Automation ADS",
+      "zh-cn": "倍福自动化 ADS"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        }
+    "desc": {
+      "en": "ioBroker Adapter to Communicate with a TwinCat 2 or TwinCat 3 Beckhoff Automation PLC",
+      "de": "ioBroker Adapter um mit einer TwinCat 2 or TwinCat 3 Beckhoff Automation SPS zu kommunizieren",
+      "ru": "Адаптер ioBroker для связи с TwinCat 2 или TwinCat 3 Beckhoff Automation PLC",
+      "pt": "Adaptador ioBroker para comunicação com um PLC de automação TwinCat 2 ou TwinCat 3 Beckhoff",
+      "nl": "ioBroker Adapter om te communiceren met een TwinCat 2 of TwinCat 3 Beckhoff Automation PLC",
+      "fr": "Adaptateur ioBroker pour communiquer avec un automate d'automatisation TwinCat 2 ou TwinCat 3 Beckhoff",
+      "it": "Adattatore ioBroker per comunicare con un PLC di automazione Beckhoff TwinCat 2 o TwinCat 3",
+      "es": "Adaptador ioBroker para comunicarse con un PLC TwinCat 2 o TwinCat 3 Beckhoff Automation",
+      "pl": "Adapter ioBroker do komunikacji z TwinCat 2 lub TwinCat 3 Beckhoff Automation PLC",
+      "zh-cn": "用于与 TwinCat 2 或 TwinCat 3 Beckhoff 自动化 PLC 通信的 ioBroker 适配器"
+    },
+    "authors": ["dkleber89 <dkleber89@gmail.com>"],
+    "keywords": ["Beckhoff", "ADS", "Communication", "ioBroker", "PLC", "TwinCat", "SmartHome"],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "build/main.js",
+    "icon": "beckhoff-automation.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/dkleber89/ioBroker.beckhoff-automation/master/admin/beckhoff-automation.png",
+    "readme": "https://github.com/dkleber89/ioBroker.beckhoff-automation/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "hardware",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "materialize": true,
+    "dependencies": [
+      {
+        "js-controller": ">=2.0.0"
+      }
     ]
+  },
+  "native": {
+    "option1": true,
+    "option2": "42"
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
