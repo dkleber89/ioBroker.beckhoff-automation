@@ -1,12 +1,13 @@
+/* eslint-disable global-require */
 import React from 'react';
-import { Theme, withStyles } from '@material-ui/core/styles';
 
 import GenericApp from '@iobroker/adapter-react/GenericApp';
-import Settings from './components/settings';
 import { GenericAppProps, GenericAppSettings } from '@iobroker/adapter-react/types';
-import { StyleRules } from '@material-ui/core/styles';
+import { withStyles, createStyles } from '@material-ui/core/styles';
 
-const styles = (_theme: Theme): StyleRules => ({
+import Settings from './components/settings';
+
+const styles = createStyles({
   root: {},
 });
 
@@ -31,6 +32,8 @@ class App extends GenericApp {
     super(props, extendedProps);
   }
 
+  // TODO: Use this Method??
+  // eslint-disable-next-line class-methods-use-this
   onConnectionReady(): void {
     // executed when connection is ready
   }

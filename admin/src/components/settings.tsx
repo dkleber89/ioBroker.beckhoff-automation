@@ -1,15 +1,16 @@
 import React from 'react';
+
+import I18n from '@iobroker/adapter-react/i18n';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Input from '@material-ui/core/Input';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 import { withStyles } from '@material-ui/core/styles';
 import { CreateCSSProperties } from '@material-ui/core/styles/withStyles';
 import TextField from '@material-ui/core/TextField';
-import Input from '@material-ui/core/Input';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import I18n from '@iobroker/adapter-react/i18n';
 
 const styles = (): Record<string, CreateCSSProperties> => ({
   input: {
@@ -39,7 +40,7 @@ const styles = (): Record<string, CreateCSSProperties> => ({
     width: 'calc(100% - 370px)',
   },
   controlElement: {
-    //background: "#d2d2d2",
+    // background: "#d2d2d2",
     marginBottom: 5,
   },
 });
@@ -92,10 +93,10 @@ class Settings extends React.Component<SettingsProps, SettingsState> {
         <Select
           value={this.props.native[attr] || '_'}
           onChange={e => this.props.onChange(attr, e.target.value === '_' ? '' : e.target.value)}
-          input={<Input name={attr} id={attr + '-helper'} />}
+          input={<Input name={attr} id={`${attr}-helper`} />}
         >
           {options.map(item => (
-            <MenuItem key={'key-' + item.value} value={item.value || '_'}>
+            <MenuItem key={`key-${item.value}`} value={item.value || '_'}>
               {I18n.t(item.title)}
             </MenuItem>
           ))}

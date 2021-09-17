@@ -33,8 +33,8 @@ class BeckhoffAutomation extends utils.Adapter {
 
     // The adapters config (in the instance object everything under the attribute "native") is accessible via
     // this.config:
-    this.log.info('config option1: ' + this.config.option1);
-    this.log.info('config option2: ' + this.config.option2);
+    this.log.info(`config option1: ${this.config.option1}`);
+    this.log.info(`config option2: ${this.config.option2}`);
 
     /*
 		For every state in the system there has to be also an object of type state
@@ -76,15 +76,17 @@ class BeckhoffAutomation extends utils.Adapter {
 
     // examples for the checkPassword/checkGroup functions
     let result = await this.checkPasswordAsync('admin', 'iobroker');
-    this.log.info('check user admin pw iobroker: ' + result);
+    this.log.info(`check user admin pw iobroker: ${result}`);
 
     result = await this.checkGroupAsync('admin', 'admin');
-    this.log.info('check group user admin group admin: ' + result);
+    this.log.info(`check group user admin group admin: ${result}`);
   }
 
   /**
    * Is called when adapter shuts down - callback has to be called under any circumstances!
    */
+  // TODO
+  // eslint-disable-next-line class-methods-use-this
   private onUnload(callback: () => void): void {
     try {
       // Here you must clear all timeouts or intervals that may still be active

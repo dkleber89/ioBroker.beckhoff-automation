@@ -69,6 +69,7 @@ Several npm scripts are predefined for your convenience. You can run them using 
 | `check` | Performs a type-check on your code (without compiling anything). |
 | `coverage` | Generates code coverage using your test files. |
 | `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
+| `release` | Creates a new release, see [`@alcalzone/release-script`](https://github.com/AlCalzone/release-script#usage) for more details. |
 
 ### Writing tests
 
@@ -88,32 +89,41 @@ Since you have chosen GitHub Actions as your CI service, you can
 enable automatic releases on npm whenever you push a new git tag that matches the form
 `v<major>.<minor>.<patch>`. The necessary steps are described in `.github/workflows/test-and-release.yml`.
 
+Since you installed the release script, you can create a new
+release simply by calling:
+
+```bash
+npm run release
+```
+
+Additional command line options for the release script are explained in the
+[release-script documentation](https://github.com/AlCalzone/release-script#command-line).
+
 To get your adapter released in ioBroker, please refer to the documentation
 of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
 
-### Test the adapter manually on a local ioBroker installation
+### Test the adapter manually with dev-server
 
-In order to install the adapter locally without publishing, the following steps are recommended:
+Since you set up `dev-server`, you can use it to run, test and debug your adapter.
 
-1. Create a tarball from your dev directory:
-   ```bash
-   npm pack
-   ```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-   ```bash
-   cd /opt/iobroker
-   npm i /path/to/tarball.tgz
-   ```
+You may start `dev-server` by calling from your dev directory:
 
-For later updates, the above procedure is not necessary. Just do the following:
+```bash
+dev-server watch
+```
 
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.beckhoff-automation`)
-1. Execute `iobroker upload beckhoff-automation` on the ioBroker host
+The ioBroker.admin interface will then be available at http://localhost:8081/
+
+Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev-server#command-line) for more details.
 
 ## Changelog
 
-### 0.0.1
+<!--
+    Placeholder for the next version (at the beginning of the line):
+    ### **WORK IN PROGRESS**
+-->
+
+### **WORK IN PROGRESS**
 
 - (dkleber89) initial release
 

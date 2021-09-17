@@ -32,11 +32,13 @@
 
     // Consider targetting es2019 or higher if you only support Node.js 12+
     "target": "es2019",
+    "lib": ["DOM", "ES2019", "ES2020.bigint", "ES2020.string", "ES2020.symbol.wellknown"],
+    "jsx": "react",
 
     "sourceMap": true,
     "inlineSourceMap": false,
     "watch": false
   },
-  "include": ["src/**/*.ts", "admin/**/*.ts", "admin/**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["build/**", "node_modules/**"]
 }

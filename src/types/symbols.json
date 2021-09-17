@@ -1,0 +1,4099 @@
+[
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411316,
+    "size": 4,
+    "name": ".c_TimeValue24h_ms",
+    "type": "UDINT",
+    "comment": "Time value for 24 hours in ms"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411320,
+    "size": 4,
+    "name": ".c_udiMax",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411310,
+    "size": 2,
+    "name": ".c_wFRIDAY",
+    "type": "WORD",
+    "comment": "Constant value for Friday"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411302,
+    "size": 2,
+    "name": ".c_wMONDAY",
+    "type": "WORD",
+    "comment": "Constant value for Monday"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411312,
+    "size": 2,
+    "name": ".c_wSATURDAY",
+    "type": "WORD",
+    "comment": "CONSTANT value FOR Saturday"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411300,
+    "size": 2,
+    "name": ".c_wSUNDAY",
+    "type": "WORD",
+    "comment": "Constant value FOR Sunday"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411308,
+    "size": 2,
+    "name": ".c_wTHURSDAY",
+    "type": "WORD",
+    "comment": "Constant value for Thursday"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411304,
+    "size": 2,
+    "name": ".c_wTUESDAY",
+    "type": "WORD",
+    "comment": "Constant value for Tuesday"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411306,
+    "size": 2,
+    "name": ".c_wWEDNESDAY",
+    "type": "WORD",
+    "comment": "Constant value for Wednesday"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411239,
+    "size": 1,
+    "name": ".g_bHVACBackupDataReadDone",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411264,
+    "size": 1,
+    "name": ".g_bHVACNOVRAMDataReadDone",
+    "type": "BOOL",
+    "comment": " global flag that indicates NOVRAM data read successful so that FBs can proceed "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411267,
+    "size": 1,
+    "name": ".g_bHVACNOVRAMParamsChanged",
+    "type": "BOOL",
+    "comment": " global flag to trigger backup "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411268,
+    "size": 1,
+    "name": ".g_bHVACNOVRAMUsed",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411238,
+    "size": 1,
+    "name": ".g_bHVACParamsChanged",
+    "type": "BOOL",
+    "comment": " global flag to trigger backup "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411265,
+    "size": 1,
+    "name": ".g_bHVACPersDataReadDone",
+    "type": "BOOL",
+    "comment": " global flag that indicates persistent data read successful so that FBs can proceed "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411266,
+    "size": 1,
+    "name": ".g_bHVACPersParamsChanged",
+    "type": "BOOL",
+    "comment": " global flag to trigger backup "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411269,
+    "size": 1,
+    "name": ".g_bHVACPersUsed",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411270,
+    "size": 1,
+    "name": ".g_bHVACPersWriteBusy",
+    "type": "BOOL",
+    "comment": "flag indication to reset working counter for ThomasK "
+  },
+  {
+    "indexGroup": 16416,
+    "indexOffset": 411260,
+    "size": 4,
+    "name": ".g_dwHVACVarConfigEnd",
+    "type": "DWORD",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16416,
+    "indexOffset": 411256,
+    "size": 4,
+    "name": ".g_dwHVACVarConfigStart",
+    "type": "DWORD",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411272,
+    "size": 2,
+    "name": ".g_iNumOfCmdCtrl_8",
+    "type": "INT",
+    "comment": "FB_HVACCmdCtrl_8"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411280,
+    "size": 4,
+    "name": ".g_rYMax",
+    "type": "REAL",
+    "comment": "FB_HVACPowerRangeTable, werden nicht benötigt, habe diese aber trotzdem stehen gelassen FPo"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411276,
+    "size": 4,
+    "name": ".g_rYMin",
+    "type": "REAL",
+    "comment": "FB_HVACPowerRangeTable, werden nicht benötigt, habe diese aber trotzdem stehen gelassen FPo"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411240,
+    "size": 16,
+    "name": ".g_stHVACCycleTimeInterpretation",
+    "type": "Tc2_HVAC.ST_HVACCTRL_CYCLE_TIME_INTERPRETATION",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411296,
+    "size": 4,
+    "name": ".g_udiMaxSec",
+    "type": "UDINT",
+    "comment": "FB_HVACI_CtrlStep / FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411508,
+    "size": 1030,
+    "name": ".LANGUAGE",
+    "type": "Oscat_Basic.CONSTANTS_LANGUAGE",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 413620,
+    "size": 14,
+    "name": ".LOCATION",
+    "type": "Oscat_Basic.CONSTANTS_LOCATION",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411288,
+    "size": 8,
+    "name": ".lrCloseToZero",
+    "type": "LREAL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411396,
+    "size": 88,
+    "name": ".MATH",
+    "type": "Oscat_Basic.CONSTANTS_MATH",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411484,
+    "size": 24,
+    "name": ".PHYS",
+    "type": "Oscat_Basic.CONSTANTS_PHYS",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411284,
+    "size": 4,
+    "name": ".rCloseToZero",
+    "type": "REAL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 412540,
+    "size": 1080,
+    "name": ".SETUP",
+    "type": "Oscat_Basic.CONSTANTS_SETUP",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410628,
+    "size": 4,
+    "name": ".TCPADS_MAXUDP_BUFFSIZE",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411274,
+    "size": 2,
+    "name": ".uiMaxDataFileSize",
+    "type": "UINT",
+    "comment": "NOT allowed to be 65535 due to overflow in FOR-loops"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384000,
+    "size": 2,
+    "name": "Config.eInternalLog",
+    "type": "log4tc.E_LogLevel",
+    "comment": " min. log level for internal logging. "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384002,
+    "size": 2,
+    "name": "Config.nBufferLen",
+    "type": "UINT",
+    "comment": " Length of per task log buffer in bytes "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384004,
+    "size": 2,
+    "name": "Config.nMaxScopedContext",
+    "type": "UINT",
+    "comment": " Max. number of nested scope context. "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384006,
+    "size": 81,
+    "name": "Config.sLicenseActivation",
+    "type": "STRING(80)",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384087,
+    "size": 81,
+    "name": "Const.sGlobalLogger",
+    "type": "STRING(80)",
+    "comment": " Global logger name for logger without logger input "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384168,
+    "size": 81,
+    "name": "Const.sLoggerFromInstance",
+    "type": "STRING(80)",
+    "comment": " FB_Logger*: Initialize logger name from instance path. "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615021,
+    "size": 1,
+    "name": "Constants.bFPUSupport",
+    "type": "BOOL",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615003,
+    "size": 1,
+    "name": "Constants.bLittleEndian",
+    "type": "BOOL",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615026,
+    "size": 1,
+    "name": "Constants.bMulticoreSupport",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615020,
+    "size": 1,
+    "name": "Constants.bSimulationMode",
+    "type": "BOOL",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615012,
+    "size": 8,
+    "name": "Constants.CompilerVersion",
+    "type": "VERSION",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615032,
+    "size": 4,
+    "name": "Constants.CompilerVersionNumeric",
+    "type": "DWORD",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615024,
+    "size": 2,
+    "name": "Constants.nPackMode",
+    "type": "UINT",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615022,
+    "size": 2,
+    "name": "Constants.nRegisterSize",
+    "type": "WORD",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615004,
+    "size": 8,
+    "name": "Constants.RuntimeVersion",
+    "type": "VERSION",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615028,
+    "size": 4,
+    "name": "Constants.RuntimeVersionNumeric",
+    "type": "DWORD",
+    "comment": " Does the target support multiple cores?"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 415336,
+    "size": 896,
+    "name": "FAST.fbDaliCommunicationCardOne",
+    "type": "FB_daliCommunication",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 416200,
+    "size": 6,
+    "name": "FAST.fbDaliCommunicationCardOne.stKL6821In",
+    "type": "Tc2_DALI.ST_KL6821InData",
+    "comment": " Input Struct from DALI Communication Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 416206,
+    "size": 6,
+    "name": "FAST.fbDaliCommunicationCardOne.stKL6821Out",
+    "type": "Tc2_DALI.ST_KL6821OutData",
+    "comment": " Output Struct to DALI Communication Card"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384564,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_DEVICE_DATA",
+    "type": "UDINT",
+    "comment": " State, name, etc... "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384552,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_CLEARI",
+    "type": "UDINT",
+    "comment": " Write inputs TO null "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384556,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_CLEARO",
+    "type": "UDINT",
+    "comment": " Write outputs TO null "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384536,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_RISIZE",
+    "type": "UDINT",
+    "comment": " Read input size (in BYTE) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384548,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_ROSIZE",
+    "type": "UDINT",
+    "comment": " Read/write output bit "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384528,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_RWIB",
+    "type": "UDINT",
+    "comment": " Read/write input BYTE(S) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384560,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_RWIOB",
+    "type": "UDINT",
+    "comment": " Read input AND write output BYTE(S)  ADS-READWRITE "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384532,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_RWIX",
+    "type": "UDINT",
+    "comment": " Read/write input bit "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384540,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_RWOB",
+    "type": "UDINT",
+    "comment": " Read/write output BYTE(S) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384544,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_IOIMAGE_RWOX",
+    "type": "UDINT",
+    "comment": " Read/write output bit "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384512,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_DOWNLOAD",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384484,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_HNDBYNAME",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384500,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_INFOBYNAME",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384508,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_INFOBYNAMEEX",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384496,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_RELEASEHND",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384516,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_UPLOAD",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384520,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_UPLOADINFO",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384492,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_VALBYHND",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384488,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_VALBYNAME",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384504,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYM_VERSION",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384476,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYMNAME",
+    "type": "UDINT",
+    "comment": " Symbol name "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384524,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYMNOTE",
+    "type": "UDINT",
+    "comment": " Notification of named handle "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384472,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYMTAB",
+    "type": "UDINT",
+    "comment": " Symbol table "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384480,
+    "size": 4,
+    "name": "Global_Variables.ADSIGRP_SYMVAL",
+    "type": "UDINT",
+    "comment": " Symbol value "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384568,
+    "size": 4,
+    "name": "Global_Variables.ADSIOFFS_DEVDATA_ADSSTATE",
+    "type": "UDINT",
+    "comment": " Ads state OF device "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384572,
+    "size": 4,
+    "name": "Global_Variables.ADSIOFFS_DEVDATA_DEVSTATE",
+    "type": "UDINT",
+    "comment": " Device state "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384704,
+    "size": 4,
+    "name": "Global_Variables.ADSLOG_MSGTYPE_ERROR",
+    "type": "DWORD",
+    "comment": " Error icon "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384696,
+    "size": 4,
+    "name": "Global_Variables.ADSLOG_MSGTYPE_HINT",
+    "type": "DWORD",
+    "comment": " Hint icon "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384708,
+    "size": 4,
+    "name": "Global_Variables.ADSLOG_MSGTYPE_LOG",
+    "type": "DWORD",
+    "comment": " Write message to log file "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384712,
+    "size": 4,
+    "name": "Global_Variables.ADSLOG_MSGTYPE_MSGBOX",
+    "type": "DWORD",
+    "comment": " View message in message box "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384716,
+    "size": 4,
+    "name": "Global_Variables.ADSLOG_MSGTYPE_RESOURCE",
+    "type": "DWORD",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384720,
+    "size": 4,
+    "name": "Global_Variables.ADSLOG_MSGTYPE_STRING",
+    "type": "DWORD",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384700,
+    "size": 4,
+    "name": "Global_Variables.ADSLOG_MSGTYPE_WARN",
+    "type": "DWORD",
+    "comment": " Warning icon "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384458,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_CONFIG",
+    "type": "UINT",
+    "comment": " System is in config mode "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384450,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_ERROR",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384466,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_EXCEPTION",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384430,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_IDLE",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384464,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_INCOMPATIBLE",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384434,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_INIT",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384428,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_INVALID",
+    "type": "UINT",
+    "comment": " Invalid ADS state "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384444,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_LOADCFG",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384468,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_MAXSTATES",
+    "type": "UINT",
+    "comment": " Max. number of available ads states "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384446,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_POWERFAILURE",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384448,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_POWERGOOD",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384460,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_RECONFIG",
+    "type": "UINT",
+    "comment": " System should restart in config mode "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384432,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_RESET",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384456,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_RESUME",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384438,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_RUN",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384442,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_SAVECFG",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384452,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_SHUTDOWN",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384436,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_START",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384440,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_STOP",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384462,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_STOPPING",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384454,
+    "size": 2,
+    "name": "Global_Variables.ADSSTATE_SUSPEND",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392920,
+    "size": 4,
+    "name": "Global_Variables.AMSLOGGER_IGR_GENERAL",
+    "type": "UDINT",
+    "comment": " TwinCAT Ams Logger general index group "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392924,
+    "size": 4,
+    "name": "Global_Variables.AMSLOGGER_IOF_MODE",
+    "type": "UDINT",
+    "comment": " TwinCAT Ams Logger mode "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392928,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_AMSLOGGER",
+    "type": "UINT",
+    "comment": " TwinCAT Ams Logger port number "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384392,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_EVENTLOG",
+    "type": "UINT",
+    "comment": " Event logger "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384250,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_LOGGER",
+    "type": "UINT",
+    "comment": " Logger "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384420,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_CAM",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384422,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_CAMTOOL",
+    "type": "UINT",
+    "comment": " Camming tool "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384406,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_CNC",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384396,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_IO",
+    "type": "UINT",
+    "comment": " I/O Driver "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384404,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_ISG",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384408,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_LINE",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384398,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_NC",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384400,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_NCSAF",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384402,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_NCSVB",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384410,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_PLC",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384412,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_PLC_RTS1",
+    "type": "UINT",
+    "comment": " TwinCAT v2.xx first PLC runtime system "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384414,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_PLC_RTS2",
+    "type": "UINT",
+    "comment": " TwinCAT v2.xx second PLC runtime system "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384416,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_PLC_RTS3",
+    "type": "UINT",
+    "comment": " TwinCAT v2.xx third PLC runtime system "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384418,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_PLC_RTS4",
+    "type": "UINT",
+    "comment": " TwinCAT v2.xx fourth PLC runtime system "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384394,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R0_RTIME",
+    "type": "UINT",
+    "comment": " R0 Real time "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384426,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R3_SCOPESERVER",
+    "type": "UINT",
+    "comment": " TwinCAT Scope Server "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384424,
+    "size": 2,
+    "name": "Global_Variables.AMSPORT_R3_SYSSERV",
+    "type": "UINT",
+    "comment": " TwinCAT System Service "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384725,
+    "size": 1,
+    "name": "Global_Variables.BOOTDATAFLAGS_PERSISTENT_INVALID",
+    "type": "BYTE",
+    "comment": " Persistent data is invalid "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384724,
+    "size": 1,
+    "name": "Global_Variables.BOOTDATAFLAGS_PERSISTENT_LOADED",
+    "type": "BYTE",
+    "comment": " Persistent data loaded "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384470,
+    "size": 1,
+    "name": "Global_Variables.BOOTDATAFLAGS_RETAIN_INVALID",
+    "type": "BYTE",
+    "comment": " Retain data is invalid "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384249,
+    "size": 1,
+    "name": "Global_Variables.BOOTDATAFLAGS_RETAIN_LOADED",
+    "type": "BYTE",
+    "comment": " Retain data loaded "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384471,
+    "size": 1,
+    "name": "Global_Variables.BOOTDATAFLAGS_RETAIN_REQUESTED",
+    "type": "BYTE",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393884,
+    "size": 4,
+    "name": "Global_Variables.DATE_AND_TIME_SECPERDAY",
+    "type": "DWORD",
+    "comment": " Number of seconds per day "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 394548,
+    "size": 4,
+    "name": "Global_Variables.DATE_AND_TIME_SECPERWEEK",
+    "type": "DWORD",
+    "comment": " Number of seconds per week "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 395332,
+    "size": 4,
+    "name": "Global_Variables.DBG_OUTPUT_FILE",
+    "type": "DWORD",
+    "comment": " Enabled, text file  "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 395328,
+    "size": 4,
+    "name": "Global_Variables.DBG_OUTPUT_LOG",
+    "type": "DWORD",
+    "comment": " Enabled, TwinCAT System Manager Log "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 395324,
+    "size": 4,
+    "name": "Global_Variables.DBG_OUTPUT_NONE",
+    "type": "DWORD",
+    "comment": " Disabled (no debug oputput) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 395336,
+    "size": 4,
+    "name": "Global_Variables.DBG_OUTPUT_VISU",
+    "type": "DWORD",
+    "comment": " reserved "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384816,
+    "size": 4,
+    "name": "Global_Variables.DEFAULT_ADS_TIMEOUT",
+    "type": "TIME",
+    "comment": " Default ADS timeout value "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392763,
+    "size": 1,
+    "name": "Global_Variables.DEFAULT_CSV_FIELD_DOUBLE_QUOTE",
+    "type": "BYTE",
+    "comment": " CSV separator constant: double-quote (\") => used to enclose special characters like line breaks, double-quotes, commas... "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 385016,
+    "size": 1,
+    "name": "Global_Variables.DEFAULT_CSV_FIELD_SEP",
+    "type": "BYTE",
+    "comment": " Default CSV-file field separator character.  Semicolon (;) := 16#3B => german field separator, comma (,) := 16#2C => US field separator "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 395342,
+    "size": 1,
+    "name": "Global_Variables.DEFAULT_CSV_RECORD_SEP_CR",
+    "type": "BYTE",
+    "comment": " CSV separator constant: cariage return => record separator (first character) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 395343,
+    "size": 1,
+    "name": "Global_Variables.DEFAULT_CSV_RECORD_SEP_LF",
+    "type": "BYTE",
+    "comment": " CSV separator constant: line feed => record separator (second character) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393000,
+    "size": 16,
+    "name": "Global_Variables.EMPTY_ARG_VALUE",
+    "type": "Tc2_Utilities.T_Arg",
+    "comment": " T_Arg empty value "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410581,
+    "size": 39,
+    "name": "Global_Variables.EMPTY_GUID_REGSTRING",
+    "type": "STRING(38)",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410544,
+    "size": 37,
+    "name": "Global_Variables.EMPTY_GUID_STRING",
+    "type": "STRING(36)",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410528,
+    "size": 16,
+    "name": "Global_Variables.EMPTY_GUID_STRUCT",
+    "type": "GUID",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392764,
+    "size": 148,
+    "name": "Global_Variables.EMPTY_ROUTE_ENTRY",
+    "type": "Tc2_Utilities.ST_AmsRouteEntry",
+    "comment": "eTransport := eRouteTransport_None see Workitem 7547"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384806,
+    "size": 2,
+    "name": "Global_Variables.eWatchdogConfig",
+    "type": "Tc2_System.E_WATCHDOG_TIME_CONFIG",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392934,
+    "size": 2,
+    "name": "Global_Variables.FLOATREC_EXP_IS_INF",
+    "type": "INT",
+    "comment": " T_FloatRec type and F_GetFloatRec function constant: The value is #INF or -#INF "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392932,
+    "size": 2,
+    "name": "Global_Variables.FLOATREC_EXP_IS_NAN",
+    "type": "INT",
+    "comment": " T_FloatRec type and F_GetFloatRec function constant: The value is #NAN or -#NAN "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392936,
+    "size": 2,
+    "name": "Global_Variables.FLOATREC_MAX_DIGITS",
+    "type": "INT",
+    "comment": " T_FloatRec type and F_GetFloatRec function constant: Max. number of significant digits. Note: double precision floats have max. 15 significant digits "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392938,
+    "size": 2,
+    "name": "Global_Variables.FLOATREC_MAX_PRECISION",
+    "type": "INT",
+    "comment": " T_FloatRec type and F_GetFloatRec function constant: Max. floating point precision (1e-307) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392940,
+    "size": 2,
+    "name": "Global_Variables.FLOATREC_MIN_PRECISION",
+    "type": "INT",
+    "comment": " T_FloatRec type and F_GetFloatRec function constant: Min. floating point precision "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392980,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_ARGTYPEINVALID",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Different type field and argument parameter"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392952,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_ASTERISKPOSITION",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Asterisk parameter at invalid position "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392992,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_DESTBUFFOVERFLOW",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Destination string buffer overflow (formatted string is to long ) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392964,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_FLAGPOSITION",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: One of the flags at invalid position "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392988,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_INSUFFICIENTARGS",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: To much arguments in format string "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392996,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_INVALIDPOINTERINPUT",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Invalid pointer input "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392944,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_NOERROR",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: No error "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392948,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_PERCENTSIGNPOSITION",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Percent sign (%) at invalid position "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392972,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_PRECISIONDOTPOSITION",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Dot \".\" sign of precision field at invalid  position "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392960,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_PRECISIONVALUE",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Invalid precision field value "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392976,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_TYPEFIELDVALUE",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Invalid (unsupported) type field value "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392984,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_UNACCEPTEDPARAMETER",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Invalid format string parameters "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392968,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_WIDTHPRECISIONVALPOS",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: The width or precision field  value at invalid position"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392956,
+    "size": 4,
+    "name": "Global_Variables.FMTERR_WIDTHVALUE",
+    "type": "DWORD",
+    "comment": " FB_FormatString function block error code: Invalid width field value "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384736,
+    "size": 4,
+    "name": "Global_Variables.FOPEN_MODEAPPEND",
+    "type": "DWORD",
+    "comment": "\"a\": Opens for writing at the end of the file (appending) without removing the EOF marker before writing new data to the file; creates the file first if it doesnot exist."
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384744,
+    "size": 4,
+    "name": "Global_Variables.FOPEN_MODEBINARY",
+    "type": "DWORD",
+    "comment": "\"b\": Open in binary (untranslated) mode."
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384740,
+    "size": 4,
+    "name": "Global_Variables.FOPEN_MODEPLUS",
+    "type": "DWORD",
+    "comment": "\"+\": Opens for reading and writing"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384728,
+    "size": 4,
+    "name": "Global_Variables.FOPEN_MODEREAD",
+    "type": "DWORD",
+    "comment": "\"r\": Opens for reading. If the file does not exist or cannot be found, the call fails."
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384748,
+    "size": 4,
+    "name": "Global_Variables.FOPEN_MODETEXT",
+    "type": "DWORD",
+    "comment": "\"t\": Open in text (translated) mode."
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384732,
+    "size": 4,
+    "name": "Global_Variables.FOPEN_MODEWRITE",
+    "type": "DWORD",
+    "comment": "\"w\": Opens an empty file for writing. If the given file exists, its contents are destroyed."
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[0]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 0
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[1]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[2]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[3]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 3
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[4]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 4
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[5]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 5
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[6]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 6
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[7]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 7
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[8]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 8
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393048,
+    "size": 10,
+    "name": "Global_Variables.FORMAT_DECASC_CODES[9]",
+    "type": "BYTE",
+    "comment": " ASCII to decimal and decimal digits to ASCII codes ",
+    "arrayid": 9
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392930,
+    "size": 2,
+    "name": "Global_Variables.FORMAT_MAX_ARGS",
+    "type": "INT",
+    "comment": " Format string constant: Max. number of format arguments in FB_FormatString "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 385012,
+    "size": 4,
+    "name": "Global_Variables.GLOBAL_DCF77_PULSE_SPLIT",
+    "type": "TIME",
+    "comment": " Default DCF77 short/long pulse split time value. Bit == 0 => pulse < 140ms, Bit == 1 => pulse >= 140ms "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384889,
+    "size": 1,
+    "name": "Global_Variables.GLOBAL_DCF77_SEQUENCE_CHECK",
+    "type": "BOOL",
+    "comment": " TRUE = Enable DCF77 telegram plausibility check (two telegrams are checked), FALSE = Disable check "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384964,
+    "size": 2,
+    "name": "Global_Variables.GLOBAL_FORMAT_HASH_PREFIX_TYPE",
+    "type": "Tc2_Utilities.E_HashPrefixTypes",
+    "comment": " Global hash prefix type constant used for binary, octal or hexadecimal string format type "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384966,
+    "size": 2,
+    "name": "Global_Variables.GLOBAL_SBCS_TABLE",
+    "type": "Tc2_Utilities.E_SBCSType",
+    "comment": "Windows SBCS (Single Byte Character Set) Code Page Table "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392916,
+    "size": 4,
+    "name": "Global_Variables.HKEY_MAX_BINARY_DATA_SIZE",
+    "type": "UDINT",
+    "comment": " Max. byte size of binary registry value data "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392724,
+    "size": 4,
+    "name": "Global_Variables.IPHELPERAPI_ADAPTERSINFO",
+    "type": "UDINT",
+    "comment": " IPHELPERAPI index offset "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392728,
+    "size": 4,
+    "name": "Global_Variables.IPHELPERAPI_IPADDRBYHOSTNAME",
+    "type": "UDINT",
+    "comment": " IPHELPERAPI index offset "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392712,
+    "size": 4,
+    "name": "Global_Variables.MAX_ADAPTER_ADDRESS_LENGTH",
+    "type": "UDINT",
+    "comment": " Max. System Service local adapter physical address length (bytes[0..7]) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392708,
+    "size": 4,
+    "name": "Global_Variables.MAX_ADAPTER_DESCRIPTION_LENGTH",
+    "type": "UDINT",
+    "comment": " Max. System Service local adapter descirpion length (128 + 4 inkl. \\0) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392704,
+    "size": 4,
+    "name": "Global_Variables.MAX_ADAPTER_NAME_LENGTH",
+    "type": "UDINT",
+    "comment": " Max. System Service local adapter name length (256 + 4 inkl. \\0) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384890,
+    "size": 2,
+    "name": "Global_Variables.MAX_AVERAGE_MEASURES",
+    "type": "INT (2..100)",
+    "comment": " Max. number of measures used in the profiler function block: 2..100 "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392732,
+    "size": 4,
+    "name": "Global_Variables.MAX_LOCAL_ADAPTERS",
+    "type": "UDINT",
+    "comment": " Max. number of local network adapters "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 385018,
+    "size": 2,
+    "name": "Global_Variables.MAX_REMOTE_PCS",
+    "type": "INT",
+    "comment": " Max. number of TwinCAT remote systems/PC's "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392760,
+    "size": 1,
+    "name": "Global_Variables.MAX_ROUTE_ADDR_LEN",
+    "type": "BYTE",
+    "comment": " Max. TwinCAT router route address length "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 385017,
+    "size": 1,
+    "name": "Global_Variables.MAX_ROUTE_NAME_LEN",
+    "type": "BYTE",
+    "comment": " Max. TwinCAT router route name length "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392762,
+    "size": 1,
+    "name": "Global_Variables.MAX_ROUTE_TRANSPORT",
+    "type": "BYTE",
+    "comment": " Max. route type: eRouteTransport_SOAP "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384820,
+    "size": 4,
+    "name": "Global_Variables.MAX_STRING_LENGTH",
+    "type": "UDINT",
+    "comment": " Max. length of T_MaxString (inclusive null delimiter) "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392761,
+    "size": 1,
+    "name": "Global_Variables.MIN_ROUTE_TRANSPORT",
+    "type": "BYTE",
+    "comment": " Min. route type: eRouteTransport_None "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384888,
+    "size": 1,
+    "name": "Global_Variables.nWatchdogTime",
+    "type": "BYTE",
+    "comment": " Watchdog time. Depending of g_WatchdogConfig : seconds or minutes "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384808,
+    "size": 8,
+    "name": "Global_Variables.PI",
+    "type": "LREAL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392752,
+    "size": 4,
+    "name": "Global_Variables.ROUTE_FLAG_DYNAMIC",
+    "type": "DWORD",
+    "comment": " TwinCAT route flag: Hostname instead OF IP address "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392756,
+    "size": 4,
+    "name": "Global_Variables.ROUTE_FLAG_NOOVERRIDE",
+    "type": "DWORD",
+    "comment": " TwinCAT route flag: No override "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392748,
+    "size": 4,
+    "name": "Global_Variables.ROUTE_FLAG_TEMPORARY",
+    "type": "DWORD",
+    "comment": " TwinCAT route flag: Temporary "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392736,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_ADDREMOTE",
+    "type": "UDINT",
+    "comment": " System Service route function: Add route "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384672,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_CHANGENETID",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384592,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_CLOSEHANDLE",
+    "type": "UDINT",
+    "comment": " Close "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384588,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_CREATEFILE",
+    "type": "UDINT",
+    "comment": " Create "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392740,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_DELREMOTE",
+    "type": "UDINT",
+    "comment": " System Service route function: Delete route  "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392744,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_ENUMREMOTE",
+    "type": "UDINT",
+    "comment": " System Service route function: Enumerater route "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384600,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FCLOSE",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384640,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FDELETE",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384636,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FEOF",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392912,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FFILEFIND",
+    "type": "UDINT",
+    "comment": " System Service file find function number "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384620,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FGETS",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384596,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FOPEN",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384632,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FPRINTF",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384624,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FPUTS",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384604,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FREAD",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384644,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FRENAME",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384628,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FSCANF",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384612,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FSEEK",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384616,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FTELL",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384608,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_FWRITE",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392716,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_IPHELPERAPI",
+    "type": "UDINT",
+    "comment": " IPHELPERAPI index group "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 392720,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_IPHOSTNAME",
+    "type": "UDINT",
+    "comment": " IPHOSTNAME index group "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384648,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_MKDIR",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384576,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_OPENCREATE",
+    "type": "UDINT",
+    "comment": " Open and if not existing create "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384580,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_OPENREAD",
+    "type": "UDINT",
+    "comment": " Open existing for read access "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384584,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_OPENWRITE",
+    "type": "UDINT",
+    "comment": " Open existing for write access "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384656,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_REG_HKEYLOCALMACHINE",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384652,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_RMDIR",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384660,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_SENDEMAIL",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384668,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_STARTPROCESS",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384664,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMSERVICE_TIMESERVICES",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384726,
+    "size": 1,
+    "name": "Global_Variables.SYSTEMSTATEFLAGS_BSOD",
+    "type": "BYTE",
+    "comment": " Blue screen of death "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384727,
+    "size": 1,
+    "name": "Global_Variables.SYSTEMSTATEFLAGS_RTVIOLATION",
+    "type": "BYTE",
+    "comment": " Realtime violation - latency time "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393876,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX",
+    "type": "Tc2_Utilities.T_ULARGE_INTEGER",
+    "comment": " Max. DT value as file time DT#2106-02-06-06:28:15 "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393920,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX64",
+    "type": "ULINT",
+    "comment": " Max. DT value as file time DT#2106-02-06-06:28:15 "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393868,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN",
+    "type": "Tc2_Utilities.T_ULARGE_INTEGER",
+    "comment": " Min. DT value as file time DT#1970-01-01-00:00:00 "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393912,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN64",
+    "type": "ULINT",
+    "comment": " Min. DT value as file time DT#1970-01-01-00:00:00 "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393840,
+    "size": 4,
+    "name": "Global_Variables.SYSTEMTIME_DATEDELTA_OFFSET",
+    "type": "DWORD",
+    "comment": " Number of past days since year zero until 1 January 1601 "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393860,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_TICKSPERDAY",
+    "type": "Tc2_Utilities.T_ULARGE_INTEGER",
+    "comment": " Number of 100ns ticks per day "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393904,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_TICKSPERDAY64",
+    "type": "ULINT",
+    "comment": " Number of 100ns ticks per day "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393844,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_TICKSPERMSEC",
+    "type": "Tc2_Utilities.T_ULARGE_INTEGER",
+    "comment": " Number of 100ns ticks per millisecond "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393888,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_TICKSPERMSEC64",
+    "type": "ULINT",
+    "comment": " Number of 100ns ticks per millisecond "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393852,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_TICKSPERSEC",
+    "type": "Tc2_Utilities.T_ULARGE_INTEGER",
+    "comment": " Number of 100ns ticks per second "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393896,
+    "size": 8,
+    "name": "Global_Variables.SYSTEMTIME_TICKSPERSEC64",
+    "type": "ULINT",
+    "comment": " Number of 100ns ticks per second "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384804,
+    "size": 2,
+    "name": "Global_Variables.TCEVENT_FMTPRGSIZE",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384802,
+    "size": 2,
+    "name": "Global_Variables.TCEVENT_SRCNAMESIZE",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384790,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTFLAG_AUTOFMTALL",
+    "type": "WORD",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384782,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTFLAG_FMTSELF",
+    "type": "WORD",
+    "comment": " Format in message "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384784,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTFLAG_LOG",
+    "type": "WORD",
+    "comment": " Write to log file "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384786,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTFLAG_MSGBOX",
+    "type": "WORD",
+    "comment": " Display message box "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384780,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTFLAG_PRIOCLASS",
+    "type": "WORD",
+    "comment": " Event class/priority\tthrough textformatter"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384788,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTFLAG_SRCID",
+    "type": "WORD",
+    "comment": " Src id instead of source name "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384798,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTSTATE_CONFIRMED",
+    "type": "WORD",
+    "comment": " Event object is confirmed but not reset "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384792,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTSTATE_INVALID",
+    "type": "WORD",
+    "comment": " Event object is not initialized "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384796,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTSTATE_RESET",
+    "type": "WORD",
+    "comment": " Event object is in a reset state "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384800,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTSTATE_RESETCON",
+    "type": "WORD",
+    "comment": " Event object is confirmed and reset "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384794,
+    "size": 2,
+    "name": "Global_Variables.TCEVENTSTATE_SIGNALED",
+    "type": "WORD",
+    "comment": " Event object is in a signaled state "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384688,
+    "size": 4,
+    "name": "Global_Variables.TIMESERVICE_ADJUSTTIMETORTC",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384676,
+    "size": 4,
+    "name": "Global_Variables.TIMESERVICE_DATEANDTIME",
+    "type": "UDINT",
+    "comment": " Date/time "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384684,
+    "size": 4,
+    "name": "Global_Variables.TIMESERVICE_RTCTIMEDIFF",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384680,
+    "size": 4,
+    "name": "Global_Variables.TIMESERVICE_SYSTEMTIMES",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384692,
+    "size": 4,
+    "name": "Global_Variables.TIMESERVICE_TIMEZONINFORMATION",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 393928,
+    "size": 108,
+    "name": "Global_Variables.WEST_EUROPE_TZI",
+    "type": "Tc2_Utilities.ST_TimeZoneInformation",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384284,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_log4TC",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410652,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc2_DALI",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410688,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc2_EIB",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411168,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc2_HVAC",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411324,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc2_IoFunctions",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411360,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc2_Math",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384320,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc2_Standard",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384356,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc2_System",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384976,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc2_Utilities",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384892,
+    "size": 36,
+    "name": "Global_Version.stLibVersion_Tc3_Module",
+    "type": "ST_LibVersion",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[1]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[2]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[3]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 3
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[4]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 4
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[5]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 5
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[6]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 6
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[7]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 7
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[8]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 8
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[9]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 9
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497928,
+    "size": 116920,
+    "name": "GVL_communication.aDali[10]",
+    "type": "ST_DALI",
+    "comment": "",
+    "arrayid": 10
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[1]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[2]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[3]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 3
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[4]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 4
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[5]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 5
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[6]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 6
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[7]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 7
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[8]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 8
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[9]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 9
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497368,
+    "size": 560,
+    "name": "GVL_communication.aKnx[10]",
+    "type": "ST_KNX",
+    "comment": "",
+    "arrayid": 10
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 413636,
+    "size": 4,
+    "name": "GVL_globalData.dtSystemTime",
+    "type": "DATE_AND_TIME",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614876,
+    "size": 4,
+    "name": "GVL_globalData.rOutsideTemperatureDamped",
+    "type": "REAL",
+    "comment": " Outdoor"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614888,
+    "size": 8,
+    "name": "GVL_globalData.stSunprotectionMaintenance",
+    "type": "Tc2_HVAC.ST_BARSunblind",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614896,
+    "size": 8,
+    "name": "GVL_globalData.stSunprotectionTwilight",
+    "type": "Tc2_HVAC.ST_BARSunblind",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614880,
+    "size": 8,
+    "name": "GVL_globalData.stSunprotectionWeatherProtection",
+    "type": "Tc2_HVAC.ST_BARSunblind",
+    "comment": " Sunprotection"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614848,
+    "size": 16,
+    "name": "GVL_globalData.stSystemTime",
+    "type": "Tc2_Utilities.TIMESTRUCT",
+    "comment": " Time"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 413634,
+    "size": 2,
+    "name": "GVL_globalData.uiDay",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614864,
+    "size": 2,
+    "name": "GVL_globalData.uiDayOfWeek",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614866,
+    "size": 2,
+    "name": "GVL_globalData.uiHour",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614872,
+    "size": 2,
+    "name": "GVL_globalData.uiMilliseconds",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614868,
+    "size": 2,
+    "name": "GVL_globalData.uiMinute",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 412538,
+    "size": 2,
+    "name": "GVL_globalData.uiMonth",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614874,
+    "size": 2,
+    "name": "GVL_globalData.uiOutsideBrightness",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614870,
+    "size": 2,
+    "name": "GVL_globalData.uiSecond",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411314,
+    "size": 2,
+    "name": "GVL_globalData.uiYear",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614906,
+    "size": 3,
+    "name": "GVL_ioBroker.alarms",
+    "type": "ST_IOBROKER_ALARMS",
+    "comment": " Alarms"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614930,
+    "size": 1,
+    "name": "GVL_ioBroker.apartmentHeatingRequest",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614904,
+    "size": 1,
+    "name": "GVL_ioBroker.beckhoffRestarted",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614905,
+    "size": 1,
+    "name": "GVL_ioBroker.bWatchdog",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614956,
+    "size": 12,
+    "name": "GVL_ioBroker.coldStore",
+    "type": "ST_IOBROKER_COLD_STORE",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411271,
+    "size": 1,
+    "name": "GVL_ioBroker.ioBrokerResync",
+    "type": "BOOL",
+    "comment": " System"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614968,
+    "size": 12,
+    "name": "GVL_ioBroker.laundry",
+    "type": "ST_IOBROKER_LAUNDRY",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614931,
+    "size": 1,
+    "name": "GVL_ioBroker.lightOn",
+    "type": "BOOL",
+    "comment": " Testings"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614980,
+    "size": 16,
+    "name": "GVL_ioBroker.mainAppartment",
+    "type": "ST_MAIN_APPARTMENT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614996,
+    "size": 6,
+    "name": "GVL_ioBroker.manualOverrides",
+    "type": "ST_IOBROKER_MANUAL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614910,
+    "size": 2,
+    "name": "GVL_ioBroker.outdoorTemperature",
+    "type": "INT",
+    "comment": " Data from ioBroker"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614912,
+    "size": 12,
+    "name": "GVL_ioBroker.sanitaryWaterCirculation",
+    "type": "ST_IOBROKER_SANITARY_WATER_CIRCULATION",
+    "comment": " Data"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614924,
+    "size": 6,
+    "name": "GVL_ioBroker.solar",
+    "type": "ST_IOBROKER_SOLAR",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614932,
+    "size": 12,
+    "name": "GVL_ioBroker.springWater",
+    "type": "ST_IOBROKER_SPRING_WATER",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614944,
+    "size": 12,
+    "name": "GVL_ioBroker.woodchipHeating",
+    "type": "ST_IOBROKER_WOODCHIP_HEATING",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 614909,
+    "size": 1,
+    "name": "GVL_ioBroker.woodchipHeatingBlocked",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615027,
+    "size": 1,
+    "name": "GVL_test.bBool",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 625082,
+    "size": 1,
+    "name": "GVL_test.byByte",
+    "type": "BYTE",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031641,
+    "size": 3,
+    "name": "GVL_test.cCustomFlat",
+    "type": "ST_MANUAL_OVERRIDE_ANALOG",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031650,
+    "size": 4,
+    "name": "GVL_test.cCustomLib",
+    "type": "Tc2_DALI.ST_KL6811OutData",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031644,
+    "size": 6,
+    "name": "GVL_test.cCustomNested",
+    "type": "ST_IOBROKER_MANUAL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031552,
+    "size": 4,
+    "name": "GVL_test.datDateAndTime",
+    "type": "DATE_AND_TIME",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031548,
+    "size": 4,
+    "name": "GVL_test.dDate",
+    "type": "DATE",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 990228,
+    "size": 4,
+    "name": "GVL_test.diDint",
+    "type": "DINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031556,
+    "size": 4,
+    "name": "GVL_test.dtDt",
+    "type": "DATE_AND_TIME",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 989868,
+    "size": 4,
+    "name": "GVL_test.dwDWord",
+    "type": "DWORD",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 989866,
+    "size": 2,
+    "name": "GVL_test.iInt",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031520,
+    "size": 8,
+    "name": "GVL_test.liLint",
+    "type": "LINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031536,
+    "size": 8,
+    "name": "GVL_test.lrLreal",
+    "type": "LREAL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 990276,
+    "size": 4,
+    "name": "GVL_test.rReal",
+    "type": "REAL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 625083,
+    "size": 1,
+    "name": "GVL_test.siSint",
+    "type": "SINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031560,
+    "size": 81,
+    "name": "GVL_test.sString",
+    "type": "STRING(80)",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 991388,
+    "size": 4,
+    "name": "GVL_test.todTimeOfDay",
+    "type": "TIME_OF_DAY",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031544,
+    "size": 4,
+    "name": "GVL_test.todTod",
+    "type": "TIME_OF_DAY",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 990300,
+    "size": 4,
+    "name": "GVL_test.tTime",
+    "type": "TIME",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 990252,
+    "size": 4,
+    "name": "GVL_test.udiUdint",
+    "type": "UDINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 990204,
+    "size": 2,
+    "name": "GVL_test.uiUint",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 1031528,
+    "size": 8,
+    "name": "GVL_test.uliUlint",
+    "type": "ULINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 625086,
+    "size": 1,
+    "name": "GVL_test.usiUsint",
+    "type": "USINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 625084,
+    "size": 2,
+    "name": "GVL_test.wWord",
+    "type": "WORD",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384252,
+    "size": 32,
+    "name": "Log4TcInfo.aTaskInfo[1]",
+    "type": "log4tc.ST_Log4TcTaskInfo",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 384252,
+    "size": 32,
+    "name": "Log4TcInfo.aTaskInfo[2]",
+    "type": "log4tc.ST_Log4TcTaskInfo",
+    "comment": "",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 455912,
+    "size": 3616,
+    "name": "MAIN.fbApartment",
+    "type": "FB_apartment",
+    "comment": " Apartment Components Block"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 459521,
+    "size": 1,
+    "name": "MAIN.fbApartment.fbHeating.fbHeatingCircuit.bPump",
+    "type": "BOOL",
+    "comment": "Hardware Ausgänge"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 457140,
+    "size": 4,
+    "name": "MAIN.fbApartment.fbHeating.fbHeatingCircuit.fbTemperatureSensor.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 457136,
+    "size": 4,
+    "name": "MAIN.fbApartment.fbHeating.fbHeatingCircuit.fbTemperatureSensor.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 459522,
+    "size": 2,
+    "name": "MAIN.fbApartment.fbHeating.fbHeatingCircuit.iValveSetpoint",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 420008,
+    "size": 304,
+    "name": "MAIN.fbHvacPersistent",
+    "type": "Tc2_HVAC.FB_HVACPersistentDataHandling",
+    "comment": " HVAC Lib"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 445624,
+    "size": 10288,
+    "name": "MAIN.fbMain",
+    "type": "FB_main",
+    "comment": " Main Components Block"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 447633,
+    "size": 1,
+    "name": "MAIN.fbMain.fbKitchen.fbSunblind.bBlindDown",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 447632,
+    "size": 1,
+    "name": "MAIN.fbMain.fbKitchen.fbSunblind.bBlindUp",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 447386,
+    "size": 1,
+    "name": "MAIN.fbMain.fbLightCircuit.bControl",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 447385,
+    "size": 1,
+    "name": "MAIN.fbMain.fbLightCircuit.bState",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 450481,
+    "size": 1,
+    "name": "MAIN.fbMain.fbMasterBathroom.fbRollerblind.bBlindDown",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 450480,
+    "size": 1,
+    "name": "MAIN.fbMain.fbMasterBathroom.fbRollerblind.bBlindUp",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 453241,
+    "size": 1,
+    "name": "MAIN.fbMain.fbMasterBedroom.fbRollerblind.bBlindDown",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 453240,
+    "size": 1,
+    "name": "MAIN.fbMain.fbMasterBedroom.fbRollerblind.bBlindUp",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 445680,
+    "size": 1,
+    "name": "MAIN.fbMain.fbSanitaryWaterValves.bWaterValvesOn",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 445681,
+    "size": 1,
+    "name": "MAIN.fbMain.fbSanitaryWaterValves.bWaterValvesOpen",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 991392,
+    "size": 8368,
+    "name": "MAIN.fbPublic",
+    "type": "FB_public",
+    "comment": " Public Components Block"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 999752,
+    "size": 1,
+    "name": "MAIN.fbPublic.bLight",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 991410,
+    "size": 1,
+    "name": "MAIN.fbPublic.fbColdStore.bColdStoreCoolingUnitAlarm",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 991408,
+    "size": 1,
+    "name": "MAIN.fbPublic.fbColdStore.bCoolingUnitOff",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 991409,
+    "size": 1,
+    "name": "MAIN.fbPublic.fbColdStore.bCoolingUnitRoomCoolingFansOn",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 992260,
+    "size": 4,
+    "name": "MAIN.fbPublic.fbColdStore.fbCoolingUnitRoomTemperature.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 992256,
+    "size": 4,
+    "name": "MAIN.fbPublic.fbColdStore.fbCoolingUnitRoomTemperature.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 996668,
+    "size": 1,
+    "name": "MAIN.fbPublic.fbLaundry.fbHeating.bHeatingPumpAndValve",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 996667,
+    "size": 1,
+    "name": "MAIN.fbPublic.fbLaundry.fbHeating.bHeatingVentilator",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 999594,
+    "size": 1,
+    "name": "MAIN.fbPublic.fbLight.bControl",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 999593,
+    "size": 1,
+    "name": "MAIN.fbPublic.fbLight.bState",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 420312,
+    "size": 16952,
+    "name": "MAIN.fbSystem",
+    "type": "FB_system",
+    "comment": " System Components Block"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 420322,
+    "size": 2,
+    "name": "MAIN.fbSystem.etherCatDeviceState",
+    "type": "UINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 425444,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbBoilerTemp.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 425440,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbBoilerTemp.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 429966,
+    "size": 1,
+    "name": "MAIN.fbSystem.fbCirculation.bOn",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 428212,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbCirculation.fbCirculationTemperature.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 428208,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbCirculation.fbCirculationTemperature.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[1]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[2]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[3]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 3
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[4]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 4
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[5]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 5
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[6]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 6
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[7]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 7
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[8]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 8
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[9]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 9
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[10]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 10
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[11]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 11
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[12]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 12
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[13]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 13
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[14]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 14
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[15]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 15
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[16]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 16
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[17]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 17
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[18]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 18
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[19]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 19
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[20]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 20
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[21]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 21
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[22]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 22
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[23]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 23
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 421240,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301In[24]",
+    "type": "BYTE",
+    "comment": " Input Array from KNX Communication Card ",
+    "arrayid": 24
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[1]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[2]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[3]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 3
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[4]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 4
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[5]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 5
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[6]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 6
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[7]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 7
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[8]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 8
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[9]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 9
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[10]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 10
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[11]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 11
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[12]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 12
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[13]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 13
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[14]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 14
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[15]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 15
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[16]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 16
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[17]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 17
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[18]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 18
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[19]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 19
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[20]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 20
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[21]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 21
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[22]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 22
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[23]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 23
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 421264,
+    "size": 24,
+    "name": "MAIN.fbSystem.fbKnxCommunication.aKL6301Out[24]",
+    "type": "BYTE",
+    "comment": " Output Array to KNX Communication Card ",
+    "arrayid": 24
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 422900,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbPufferTempBottom.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 422896,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbPufferTempBottom.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 423748,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbPufferTempMiddle.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 423744,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbPufferTempMiddle.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 424596,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbPufferTempTop.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 424592,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbPufferTempTop.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 430836,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbSolar.fbSolarPanelTemp.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 430832,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbSolar.fbSolarPanelTemp.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 431684,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbSolar.fbSolarPrimaryInput.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 431680,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbSolar.fbSolarPrimaryInput.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 432532,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbSolar.fbSolarSecondaryOutput.aKl3208In",
+    "type": "Tc2_IoFunctions.ST_KL3208InData",
+    "comment": " Input Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 432528,
+    "size": 4,
+    "name": "MAIN.fbSystem.fbSolar.fbSolarSecondaryOutput.aKl3208Out",
+    "type": "Tc2_IoFunctions.ST_KL3208OutData",
+    "comment": " Output Struct for one Channel of a KL3208 Card"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 435104,
+    "size": 2,
+    "name": "MAIN.fbSystem.fbSolar.iPrimaryPump",
+    "type": "INT",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 435106,
+    "size": 2,
+    "name": "MAIN.fbSystem.fbSolar.iSecondaryPump",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 435128,
+    "size": 1,
+    "name": "MAIN.fbSystem.fbSpringWater.bOverPressureOk",
+    "type": "BOOL",
+    "comment": " Hardware "
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 435132,
+    "size": 1,
+    "name": "MAIN.fbSystem.fbSpringWater.bPressureInputError",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 435133,
+    "size": 1,
+    "name": "MAIN.fbSystem.fbSpringWater.bPumpOn",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 435130,
+    "size": 2,
+    "name": "MAIN.fbSystem.fbSpringWater.iPressureValue",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 425477,
+    "size": 1,
+    "name": "MAIN.fbSystem.fbWoodchipHeating.bError",
+    "type": "BOOL",
+    "comment": ""
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 425476,
+    "size": 1,
+    "name": "MAIN.fbSystem.fbWoodchipHeating.bOn",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61472,
+    "indexOffset": 420320,
+    "size": 2,
+    "name": "MAIN.fbSystem.licenseKeyState",
+    "type": "UINT",
+    "comment": " System"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410644,
+    "size": 4,
+    "name": "Param.DALIV2_TIMEOUT_INTERNAL_RANDOM_ADDRESSING",
+    "type": "TIME",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410640,
+    "size": 4,
+    "name": "Param.DALIV2_TIMEOUT_LOCK_MESSAGE_QUEUE",
+    "type": "TIME",
+    "comment": " 0 ... 2m"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410636,
+    "size": 4,
+    "name": "Param.DALIV2_TIMEOUT_SLAVE_RESPONSE",
+    "type": "TIME",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410632,
+    "size": 4,
+    "name": "Param.DALIV2_TIMEOUT_TERMINAL_RESPONSE",
+    "type": "TIME",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411232,
+    "size": 2,
+    "name": "Param.g_iAggregateMaxNumberOfSteps",
+    "type": "INT",
+    "comment": "FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411230,
+    "size": 2,
+    "name": "Param.g_iAggregateMinNumberOfSteps",
+    "type": "INT",
+    "comment": "FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411216,
+    "size": 2,
+    "name": "Param.g_iMaxNoOfScale_nPoint",
+    "type": "INT",
+    "comment": " FB_HVACScale_nPoint"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411226,
+    "size": 2,
+    "name": "Param.g_iMaxNumberOfAggregates",
+    "type": "INT",
+    "comment": "FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411222,
+    "size": 2,
+    "name": "Param.g_iMaxNumberOfProfiles",
+    "type": "INT",
+    "comment": "FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411236,
+    "size": 2,
+    "name": "Param.g_iMaxNumberOfSequences",
+    "type": "INT",
+    "comment": "FB_HVAC2PointCtrlSequence"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411218,
+    "size": 2,
+    "name": "Param.g_iMaxNumberOfSteps",
+    "type": "INT",
+    "comment": "FB_HVACI_CtrlStep/FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411228,
+    "size": 2,
+    "name": "Param.g_iMinNumberOfAggregates",
+    "type": "INT",
+    "comment": "FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411224,
+    "size": 2,
+    "name": "Param.g_iMinNumberOfProfiles",
+    "type": "INT",
+    "comment": "FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411234,
+    "size": 2,
+    "name": "Param.g_iMinNumberOfSequences",
+    "type": "INT",
+    "comment": "FB_HVAC2PointCtrlSequence"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411220,
+    "size": 2,
+    "name": "Param.g_iMinNumberOfSteps",
+    "type": "INT",
+    "comment": "FB_HVACI_CtrlStep/FB_HVACPowerRangeTable"
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411208,
+    "size": 4,
+    "name": "Param.g_tHVACWriteBackupDataTime",
+    "type": "TIME",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411212,
+    "size": 4,
+    "name": "Param.g_udiMaxNoOfBytesInStruct",
+    "type": "UDINT",
+    "comment": " Size in number of bytes "
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411204,
+    "size": 2,
+    "name": "Param.iColumnsPerFacade",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410914,
+    "size": 2,
+    "name": "Param.iRowsPerFacade",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 411206,
+    "size": 2,
+    "name": "Param.iShadingObjects",
+    "type": "INT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 410913,
+    "size": 1,
+    "name": "Param.usiMaxSunblindScenes",
+    "type": "USINT",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497288,
+    "size": 80,
+    "name": "PRG_ScopedContextStack.aContextStack[1]",
+    "type": "log4tc.ST_ScopedContextStack",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 497288,
+    "size": 80,
+    "name": "PRG_ScopedContextStack.aContextStack[2]",
+    "type": "log4tc.ST_ScopedContextStack",
+    "comment": "",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 460112,
+    "size": 35552,
+    "name": "PRG_TaskLog.aTaskLogger[1]",
+    "type": "log4tc.FB_Log4TcTask",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 460112,
+    "size": 35552,
+    "name": "PRG_TaskLog.aTaskLogger[2]",
+    "type": "log4tc.FB_Log4TcTask",
+    "comment": "",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 495664,
+    "size": 848,
+    "name": "PRG_TaskLog.aTaskRtcTime[1]",
+    "type": "log4tc.FB_RTC_Sync",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 495664,
+    "size": 848,
+    "name": "PRG_TaskLog.aTaskRtcTime[2]",
+    "type": "log4tc.FB_RTC_Sync",
+    "comment": "",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615036,
+    "size": 128,
+    "name": "TwinCAT_LicenseInfoVarList._LicenseInfo[1]",
+    "type": "PLC.PlcLicenseInfo",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615696,
+    "size": 112,
+    "name": "TwinCAT_SystemInfoVarList.__FastTask",
+    "type": "_Implicit_Task_Info",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615808,
+    "size": 112,
+    "name": "TwinCAT_SystemInfoVarList.__MainTask",
+    "type": "_Implicit_Task_Info",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615168,
+    "size": 256,
+    "name": "TwinCAT_SystemInfoVarList._AppInfo",
+    "type": "PLC.PlcAppSystemInfo",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615424,
+    "size": 256,
+    "name": "TwinCAT_SystemInfoVarList._TaskInfo[1]",
+    "type": "PLC.PlcTaskSystemInfo",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615424,
+    "size": 256,
+    "name": "TwinCAT_SystemInfoVarList._TaskInfo[2]",
+    "type": "PLC.PlcTaskSystemInfo",
+    "comment": "",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615680,
+    "size": 4,
+    "name": "TwinCAT_SystemInfoVarList._TaskOid_FastTask",
+    "type": "OTCID",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615688,
+    "size": 4,
+    "name": "TwinCAT_SystemInfoVarList._TaskOid_MainTask",
+    "type": "OTCID",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615164,
+    "size": 4,
+    "name": "TwinCAT_SystemInfoVarList._TaskPouOid_FastTask",
+    "type": "OTCID",
+    "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 615684,
+    "size": 4,
+    "name": "TwinCAT_SystemInfoVarList._TaskPouOid_MainTask",
+    "type": "OTCID",
+    "comment": ""
+  }
+]

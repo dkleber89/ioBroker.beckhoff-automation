@@ -1,17 +1,20 @@
-/*!
+/* !
  * ioBroker gulpfile
  * Date: 2019-01-28
  */
-'use strict';
+
+const fs = require('fs');
 
 const gulp = require('gulp');
-const fs = require('fs');
-const pkg = require('./package.json');
+
 const iopackage = require('./io-package.json');
+const pkg = require('./package.json');
+
 const version = pkg && pkg.version ? pkg.version : iopackage.common.version;
 const fileName = 'words.js';
 const EMPTY = '';
 const translate = require('./build/lib/tools').translateText;
+
 const languages = {
   en: {},
   de: {},
@@ -26,29 +29,29 @@ const languages = {
 };
 
 async function translateNotExisting(obj, baseText, yandex) {
-  let t = obj['en'];
+  let t = obj.en;
   if (!t) {
     t = baseText;
   }
 
   if (t) {
-    for (let l in languages) {
+    for (const l in languages) {
       if (!obj[l]) {
         const time = new Date().getTime();
         obj[l] = await translate(t, l, yandex);
-        console.log('en -> ' + l + ' ' + (new Date().getTime() - time) + ' ms');
+        console.log(`en -> ${l} ${new Date().getTime() - time} ms`);
       }
     }
   }
 }
 
-//TASKS
+// TASKS
 
 gulp.task('updatePackages', function (done) {
   iopackage.common.version = pkg.version;
   iopackage.common.news = iopackage.common.news || {};
   if (!iopackage.common.news[pkg.version]) {
-    const news = iopackage.common.news;
+    const { news } = iopackage.common;
     const newNews = {};
 
     newNews[pkg.version] = {
@@ -78,21 +81,18 @@ gulp.task('updateReadme', function (done) {
 
     if (readme.indexOf(version) === -1) {
       const timestamp = new Date();
-      const date =
-        timestamp.getFullYear() +
-        '-' +
-        ('0' + (timestamp.getMonth() + 1).toString(10)).slice(-2) +
-        '-' +
-        ('0' + timestamp.getDate().toString(10)).slice(-2);
+      const date = `${timestamp.getFullYear()}-${`0${(timestamp.getMonth() + 1).toString(10)}`.slice(
+        -2
+      )}-${`0${timestamp.getDate().toString(10)}`.slice(-2)}`;
 
       let news = '';
       if (iopackage.common.news && iopackage.common.news[pkg.version]) {
-        news += '* ' + iopackage.common.news[pkg.version].en;
+        news += `* ${iopackage.common.news[pkg.version].en}`;
       }
 
       fs.writeFileSync(
         'README.md',
-        readmeStart + '### ' + version + ' (' + date + ')\n' + (news ? news + '\n\n' : '\n') + readmeEnd
+        `${readmeStart}### ${version} (${date})\n${news ? `${news}\n\n` : '\n'}${readmeEnd}`
       );
     }
   }
@@ -109,9 +109,9 @@ gulp.task('translate', async function (done) {
   if (iopackage && iopackage.common) {
     if (iopackage.common.news) {
       console.log('Translate News');
-      for (let k in iopackage.common.news) {
-        console.log('News: ' + k);
-        let nw = iopackage.common.news[k];
+      for (const k in iopackage.common.news) {
+        console.log(`News: ${k}`);
+        const nw = iopackage.common.news[k];
         await translateNotExisting(nw, null, yandex);
       }
     }
@@ -125,22 +125,22 @@ gulp.task('translate', async function (done) {
     }
 
     if (fs.existsSync('./admin/i18n/en/translations.json')) {
-      let enTranslations = require('./admin/i18n/en/translations.json');
-      for (let l in languages) {
-        console.log('Translate Text: ' + l);
+      const enTranslations = require('./admin/i18n/en/translations.json');
+      for (const l in languages) {
+        console.log(`Translate Text: ${l}`);
         let existing = {};
-        if (fs.existsSync('./admin/i18n/' + l + '/translations.json')) {
-          existing = require('./admin/i18n/' + l + '/translations.json');
+        if (fs.existsSync(`./admin/i18n/${l}/translations.json`)) {
+          existing = require(`./admin/i18n/${l}/translations.json`);
         }
-        for (let t in enTranslations) {
+        for (const t in enTranslations) {
           if (!existing[t]) {
             existing[t] = await translate(enTranslations[t], l, yandex);
           }
         }
-        if (!fs.existsSync('./admin/i18n/' + l + '/')) {
-          fs.mkdirSync('./admin/i18n/' + l + '/');
+        if (!fs.existsSync(`./admin/i18n/${l}/`)) {
+          fs.mkdirSync(`./admin/i18n/${l}/`);
         }
-        fs.writeFileSync('./admin/i18n/' + l + '/translations.json', JSON.stringify(existing, null, 4));
+        fs.writeFileSync(`./admin/i18n/${l}/translations.json`, JSON.stringify(existing, null, 4));
       }
     }
   }

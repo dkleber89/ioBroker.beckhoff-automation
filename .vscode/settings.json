@@ -13,5 +13,8 @@
       "fileMatch": ["io-package.json"],
       "url": "https://json.schemastore.org/io-package"
     }
-  ]
+  ],
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
