@@ -1,4 +1,4 @@
-import { AdsClient, AdsClientConnectOptions, connect } from 'node-ads';
+import { AdsClient, AdsClientConnectOptions, AdsReadDeviceInfoResult, connect } from 'node-ads';
 
 export class NodeAdsClient {
   private adsClientConnectOptions: AdsClientConnectOptions;
@@ -7,31 +7,32 @@ export class NodeAdsClient {
 
   private reconnectTimer: NodeJS.Timeout | null = null;
 
+  private checkDeviceStateInterval: NodeJS.Timeout | null = null;
+
   public connected = false;
+
+  public deviceInfo: AdsReadDeviceInfoResult | null = null;
+
+  private iobrokerLogger: ioBroker.Logger;
 
   constructor(adsClientConnectOptions: AdsClientConnectOptions, logger: ioBroker.Logger) {
     this.adsClientConnectOptions = adsClientConnectOptions;
+    this.iobrokerLogger = logger;
 
     this.adsClient = connect(adsClientConnectOptions, () => {
-      this.connected = true;
+      this.onConnected();
     });
 
     this.adsClient.on('timeout', error => {
-      logger.error(error);
-      this.connected = false;
+      this.iobrokerLogger.error(error);
 
-      this.adsClient.end(() => {
-        this.reconnect();
-      });
+      this.onDisconnecting();
     });
 
     this.adsClient.on('error', error => {
-      logger.error(error);
-      this.connected = false;
+      this.iobrokerLogger.error(error);
 
-      this.adsClient.end(() => {
-        this.reconnect();
-      });
+      this.onDisconnecting();
     });
   }
 
@@ -40,11 +41,52 @@ export class NodeAdsClient {
       this.reconnectTimer = setTimeout(() => {
         if (!this.connected) {
           this.adsClient.connect(() => {
-            this.reconnectTimer = null;
-            this.connected = true;
+            if (this.reconnectTimer) {
+              clearTimeout(this.reconnectTimer);
+              this.reconnectTimer = null;
+            }
+
+            this.onConnected();
           });
         }
       }, this.adsClientConnectOptions.timeout || 500);
     }
+  }
+
+  private onConnected(): void {
+    this.connected = true;
+
+    this.checkDeviceStateInterval = setInterval(() => {
+      this.adsClient.readDeviceInfo((error, result) => {
+        if (error) {
+          this.iobrokerLogger.error(error.message);
+
+          this.connected = false;
+          this.onDisconnecting();
+
+          this.adsClient.end(() => {
+            this.reconnect();
+          });
+        }
+
+        if (result) {
+          this.deviceInfo = result;
+        }
+      });
+    }, 5000);
+  }
+
+  private onDisconnecting(): void {
+    if (this.checkDeviceStateInterval) {
+      clearInterval(this.checkDeviceStateInterval);
+
+      this.checkDeviceStateInterval = null;
+    }
+
+    this.connected = false;
+
+    this.adsClient.end(() => {
+      this.reconnect();
+    });
   }
 }
