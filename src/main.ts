@@ -1,13 +1,4 @@
-/*
- * Created with @iobroker/create-adapter v1.34.1
- */
-
-// The adapter-core module gives you access to the core ioBroker functions
-// you need to create an adapter
 import * as utils from '@iobroker/adapter-core';
-
-// Load your modules here, e.g.:
-// import * as fs from "fs";
 
 class BeckhoffAutomation extends utils.Adapter {
   public constructor(options: Partial<utils.AdapterOptions> = {}) {
@@ -17,7 +8,7 @@ class BeckhoffAutomation extends utils.Adapter {
     });
     this.on('ready', this.onReady.bind(this));
     this.on('stateChange', this.onStateChange.bind(this));
-    // this.on('objectChange', this.onObjectChange.bind(this));
+    this.on('objectChange', this.onObjectChange.bind(this));
     // this.on('message', this.onMessage.bind(this));
     this.on('unload', this.onUnload.bind(this));
   }
@@ -103,18 +94,18 @@ class BeckhoffAutomation extends utils.Adapter {
 
   // If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
   // You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
-  // /**
-  //  * Is called if a subscribed object changes
-  //  */
-  // private onObjectChange(id: string, obj: ioBroker.Object | null | undefined): void {
-  //     if (obj) {
-  //         // The object was changed
-  //         this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-  //     } else {
-  //         // The object was deleted
-  //         this.log.info(`object ${id} deleted`);
-  //     }
-  // }
+  /**
+   * Is called if a subscribed object changes
+   */
+  private onObjectChange(id: string, obj: ioBroker.Object | null | undefined): void {
+    if (obj) {
+      // The object was changed
+      this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
+    } else {
+      // The object was deleted
+      this.log.info(`object ${id} deleted`);
+    }
+  }
 
   /**
    * Is called if a subscribed state changes
