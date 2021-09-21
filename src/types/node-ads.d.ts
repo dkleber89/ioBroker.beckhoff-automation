@@ -218,7 +218,7 @@ declare module 'node-ads' {
     releaseNotificationHandles: (cb: (this: Ads) => void) => void;
     releaseNotificationHandle: (handle: AdsClientHandle, cb: (this: Ads) => void) => void;
     writeRead: (handle: AdsClientHandle, cb: (this: Ads, err: Error | null, result: any) => void) => void;
-    getSymbols: (cb: (this: AdsClient, err: Error | null, symbols?: AdsSymbol[]) => void, raw: unknown) => void;
+    getSymbols: (cb: (this: AdsClient, err: Error | null, symbols?: AdsSymbol[]) => void, raw?: boolean) => void;
     getDatatyps: (cb: (this: AdsClient, err: Error | null, datatyps?: AdsDatatyp[]) => void) => void;
     multiRead: (
       handles: AdsClientHandle[],
