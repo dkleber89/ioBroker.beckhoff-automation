@@ -9,6 +9,12 @@ import {
   connect,
 } from 'node-ads';
 
+export enum ConnectionType {
+  TwinCat3,
+  TwinCat2,
+  TwinCat2WithConfigFile,
+}
+
 export class NodeAdsClient {
   private _adsClientConnectOptions: AdsClientConnectOptions;
 
