@@ -57,31 +57,32 @@ interface SupportedDatatyps {
 }
 
 const supportedDatatyps: SupportedDatatyps = {
-  BOOL: BOOL,
-  BYTE: BYTE,
-  WORD: WORD,
-  DWORD: DWORD,
-  SINT: SINT,
-  USINT: USINT,
-  INT: INT,
-  UINT: UINT,
-  DINT: DINT,
-  UDINT: UDINT,
-  LINT: LINT,
-  ULINT: ULINT,
-  REAL: REAL,
-  LREAL: LREAL,
-  TIME: TIME,
-  TIME_OF_DAY: TIME_OF_DAY,
-  TOD: TOD,
-  DATE: DATE,
-  DATE_AND_TIME: DATE_AND_TIME,
-  DT: DT,
+  BOOL,
+  BYTE,
+  WORD,
+  DWORD,
+  SINT,
+  USINT,
+  INT,
+  UINT,
+  DINT,
+  UDINT,
+  LINT,
+  ULINT,
+  REAL,
+  LREAL,
+  TIME,
+  TIME_OF_DAY,
+  TOD,
+  DATE,
+  DATE_AND_TIME,
+  DT,
   'STRING(80)': STRING,
 };
 
 export class NodeAdsVarTable {
   private _targetVarTable: string;
+
   private _options: NodeAdsVarTableOptions;
 
   private _relevantSymbols: AdsSymbol[] = [];
@@ -106,7 +107,7 @@ export class NodeAdsVarTable {
     }
   }
 
-  public updateHandles(datatyps: AdsDatatyp[], symbols: AdsSymbol[]) {
+  public updateHandles(datatyps: AdsDatatyp[], symbols: AdsSymbol[]): void {
     const targetIndex = this._options.connectionType === ConnectionType.TwinCat3 ? 0 : 1;
 
     symbols.forEach(symbol => {
