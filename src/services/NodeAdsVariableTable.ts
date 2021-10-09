@@ -26,11 +26,8 @@ import {
   USINT,
   WORD,
 } from 'node-ads';
-import { ConnectionType } from './NodeAdsClient';
 
-interface NodeAdsVarTableOptions {
-  connectionType: ConnectionType;
-}
+import { RuntimeType } from '../NodeAdsClient';
 
 interface SupportedDatatyps {
   BOOL: AdsSymbolType;
@@ -80,10 +77,8 @@ const supportedDatatyps: SupportedDatatyps = {
   'STRING(80)': STRING,
 };
 
-export class NodeAdsVarTable {
-  private _targetVarTable: string;
-
-  private _options: NodeAdsVarTableOptions;
+export class NodeAdsVariableTable {
+  private _targetVariableTable: string;
 
   private _relevantSymbols: AdsSymbol[] = [];
 
@@ -91,16 +86,18 @@ export class NodeAdsVarTable {
 
   private _iobrokerLogger: ioBroker.Logger;
 
+  private _runtimeType: RuntimeType;
+
   constructor(
-    targetVarTable: string,
-    options: NodeAdsVarTableOptions,
+    targetVariableTable: string,
+    runtimeType: RuntimeType,
     iobrokerLogger: ioBroker.Logger,
     datatyps?: AdsDatatyp[],
     symbols?: AdsSymbol[]
   ) {
-    this._targetVarTable = targetVarTable.toLowerCase();
-    this._options = options;
+    this._targetVariableTable = targetVariableTable.toLowerCase();
     this._iobrokerLogger = iobrokerLogger;
+    this._runtimeType = runtimeType;
 
     if (datatyps && symbols) {
       this.updateHandles(datatyps, symbols);
@@ -108,10 +105,12 @@ export class NodeAdsVarTable {
   }
 
   public updateHandles(datatyps: AdsDatatyp[], symbols: AdsSymbol[]): void {
-    const targetIndex = this._options.connectionType === ConnectionType.TwinCat3 ? 0 : 1;
+    const targetIndex = this._runtimeType === RuntimeType.TwinCat3 ? 0 : 1;
+
+    this._relevantSymbols = [];
 
     symbols.forEach(symbol => {
-      if (symbol.name.toLowerCase().indexOf(this._targetVarTable) === targetIndex) {
+      if (symbol.name.toLowerCase().indexOf(this._targetVariableTable) === targetIndex) {
         this._relevantSymbols.push(symbol);
       }
     });
@@ -120,6 +119,8 @@ export class NodeAdsVarTable {
   }
 
   private _createHandles(datatyps: AdsDatatyp[]) {
+    this._handles = [];
+
     this._relevantSymbols.forEach(symbol => {
       const tempHandle: AdsClientHandle = {};
 
@@ -132,8 +133,20 @@ export class NodeAdsVarTable {
           tempHandle.bytelength = string(
             parseInt(symbol.type.slice(symbol.type.indexOf('(') + 1, symbol.type.indexOf(')')), 10)
           );
+        } else {
+          this._iobrokerLogger.warn(
+            `Unsupported Variable (${symbol.name}) found in Variable Table (${this._targetVariableTable})`
+          );
         }
+
+        this._handles.push(tempHandle);
+
+        return;
       }
+
+      this._iobrokerLogger.warn(
+        `Unsupported Array (${symbol.name}) found in Variable Table (${this._targetVariableTable})`
+      );
     });
   }
 

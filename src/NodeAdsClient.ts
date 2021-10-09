@@ -9,7 +9,7 @@ import {
   connect,
 } from 'node-ads';
 
-export enum ConnectionType {
+export enum RuntimeType {
   TwinCat3,
   TwinCat2,
   TwinCat2WithConfigFile,
@@ -104,12 +104,7 @@ export class NodeAdsClient {
         if (error) {
           this._iobrokerLogger.error(error.message);
 
-          this.connected = false;
           this._onDisconnecting();
-
-          this._adsClient.end(() => {
-            this._reconnect();
-          });
         }
 
         if (result) {

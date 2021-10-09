@@ -13,7 +13,7 @@ module.exports = {
   overrides: [
     {
       files: ['./**/*.test.tsx', './**/*.test.ts'],
-      rules: { 'func-names': 'off' },
+      rules: { 'func-names': 'off',  },
     },
   ],
 };

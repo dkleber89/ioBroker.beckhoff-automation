@@ -28,7 +28,8 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.5.1"
+    "@iobroker/adapter-core": "^2.5.1",
+    "node-ads": "^1.5.1"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^3.4.1",
@@ -81,9 +82,9 @@
     "lint": "eslint . --ext .ts,.tsx,.js",
     "lint:fix": "npm run lint -- --fix",
     "test:ts": "mocha --config test/mocharc.custom.json src/**/*.test.ts",
+    "test:watch": "npm run test:ts -- --watch --watch-extensions ts",
     "test:coverage": "nyc npm run test:ts",
     "test:package": "mocha test/package --exit",
-    "test:unit": "mocha test/unit --exit",
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:ts && npm run test:package",
     "watch:parcel": "parcel admin/src/index.tsx -d admin/build --hmr-port 1235",
