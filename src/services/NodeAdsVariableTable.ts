@@ -127,46 +127,98 @@ export class NodeAdsVariableTable {
   private _createHandles(datatyps: AdsDatatyp[], symbol: AdsSymbol, datatype?: AdsDatatyp, prefix?: string) {
     const tempHandle: AdsClientHandle = {};
 
-    const symbolName = prefix && datatype ? `${prefix}${datatype.name}` : symbol.name;
+    // First Level in Tree
+    if (!datatype || !prefix) {
+      if (!symbol.arrayid) {
+        if (supportedDatatyps[symbol.type as keyof SupportedDatatyps]) {
+          tempHandle.symname = symbol.name;
+          tempHandle.bytelength = supportedDatatyps[symbol.type as keyof SupportedDatatyps];
 
-    if (!symbol.arrayid) {
-      if (supportedDatatyps[symbol.type as keyof SupportedDatatyps]) {
-        tempHandle.symname = symbol.name;
-        tempHandle.bytelength = supportedDatatyps[symbol.type as keyof SupportedDatatyps];
-
-        this._handles.push(tempHandle);
-      } else if (symbol.type.startsWith('STRING(')) {
-        tempHandle.symname = symbol.name;
-        tempHandle.bytelength = string(
-          parseInt(symbol.type.slice(symbol.type.indexOf('(') + 1, symbol.type.indexOf(')')), 10)
-        );
-
-        this._handles.push(tempHandle);
-      } else {
-        const datatyp = datatyps.find(datatyp => datatyp.name === symbol.type);
-
-        if (!datatyp) {
-          this._iobrokerLogger.warn(
-            `Unsupported Variable (${symbol.name}) found in Variable Table (${this._targetVariableTable})`
+          this._handles.push(tempHandle);
+        } else if (symbol.type.startsWith('STRING(')) {
+          tempHandle.symname = symbol.name;
+          tempHandle.bytelength = string(
+            parseInt(symbol.type.slice(symbol.type.indexOf('(') + 1, symbol.type.indexOf(')')), 10)
           );
 
-          return;
+          this._handles.push(tempHandle);
+        } else {
+          const datatyp = datatyps.find(datatyp => datatyp.name === symbol.type);
+
+          if (!datatyp) {
+            this._iobrokerLogger.warn(
+              `Unsupported Variable (${symbol.name}) found in Variable Table (${this._targetVariableTable})`
+            );
+
+            return;
+          }
+
+          this._createHandles(datatyps, symbol, datatyp, `${symbol.name}.`);
         }
 
-        // TODO: Next
-        this._createHandles(datatyps, symbol, datatyp);
+        return;
+      }
+
+      if (!this._arrayName || !symbol.name.includes(this._arrayName)) {
+        this._arrayName = symbol.name.substring(0, symbol.name.indexOf('['));
+
+        this._iobrokerLogger.warn(
+          `Unsupported Array (${this._arrayName}) found in Variable Table (${this._targetVariableTable})`
+        );
       }
 
       return;
     }
 
-    if (!this._arrayName || !symbol.name.includes(this._arrayName)) {
-      this._arrayName = symbol.name.substring(0, symbol.name.indexOf('['));
+    // TODO: Work on deeper Levels
+    // Second Level or deeper in Tree
+    const { datatyps: datatypeDatatyps, name } = datatype;
 
-      this._iobrokerLogger.warn(
-        `Unsupported Array (${this._arrayName}) found in Variable Table (${this._targetVariableTable})`
-      );
+    if (!datatypeDatatyps) {
+      this._iobrokerLogger.error(`Datatyps in Datatype (${name}) not found`);
+
+      return;
     }
+
+    datatypeDatatyps.forEach(datatypeDatatype => {
+      if (!datatypeDatatype.) {
+        if (supportedDatatyps[symbol.type as keyof SupportedDatatyps]) {
+          tempHandle.symname = symbol.name;
+          tempHandle.bytelength = supportedDatatyps[symbol.type as keyof SupportedDatatyps];
+
+          this._handles.push(tempHandle);
+        } else if (symbol.type.startsWith('STRING(')) {
+          tempHandle.symname = symbol.name;
+          tempHandle.bytelength = string(
+            parseInt(symbol.type.slice(symbol.type.indexOf('(') + 1, symbol.type.indexOf(')')), 10)
+          );
+
+          this._handles.push(tempHandle);
+        } else {
+          const datatyp = datatyps.find(datatyp => datatyp.name === symbol.type);
+
+          if (!datatyp) {
+            this._iobrokerLogger.warn(
+              `Unsupported Variable (${symbol.name}) found in Variable Table (${this._targetVariableTable})`
+            );
+
+            return;
+          }
+
+          this._createHandles(datatyps, symbol, datatyp, `${symbol.name}.`);
+        }
+
+        return;
+      }
+
+      if (!this._arrayName || !symbol.name.includes(this._arrayName)) {
+        this._arrayName = symbol.name.substring(0, symbol.name.indexOf('['));
+
+        this._iobrokerLogger.warn(
+          `Unsupported Array (${this._arrayName}) found in Variable Table (${this._targetVariableTable})`
+        );
+      }
+    });
   }
 
   get handles(): AdsClientHandle[] {
