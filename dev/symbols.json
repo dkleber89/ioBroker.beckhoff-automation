@@ -2623,8 +2623,8 @@
   },
   {
     "indexGroup": 16448,
-    "indexOffset": 614968,
-    "size": 12,
+    "indexOffset": 437296,
+    "size": 20,
     "name": "GVL_ioBroker.laundry",
     "type": "ST_IOBROKER_LAUNDRY",
     "comment": ""
@@ -2700,6 +2700,96 @@
     "name": "GVL_ioBroker.woodchipHeatingBlocked",
     "type": "BOOL",
     "comment": ""
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[1]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 1
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[2]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 2
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[3]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 3
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[4]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 4
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[5]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 5
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[6]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 6
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[7]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 7
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[8]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 8
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[9]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 9
+  },
+  {
+    "indexGroup": 16448,
+    "indexOffset": 437624,
+    "size": 10,
+    "name": "GVL_test.abBool[10]",
+    "type": "BOOL",
+    "comment": "",
+    "arrayid": 10
   },
   {
     "indexGroup": 16448,
@@ -3049,15 +3139,15 @@
   },
   {
     "indexGroup": 16448,
-    "indexOffset": 991392,
-    "size": 8368,
+    "indexOffset": 1006064,
+    "size": 8720,
     "name": "MAIN.fbPublic",
     "type": "FB_public",
     "comment": " Public Components Block"
   },
   {
     "indexGroup": 61488,
-    "indexOffset": 999752,
+    "indexOffset": 1014776,
     "size": 1,
     "name": "MAIN.fbPublic.bLight",
     "type": "BOOL",
@@ -3065,7 +3155,7 @@
   },
   {
     "indexGroup": 61472,
-    "indexOffset": 991410,
+    "indexOffset": 1006082,
     "size": 1,
     "name": "MAIN.fbPublic.fbColdStore.bColdStoreCoolingUnitAlarm",
     "type": "BOOL",
@@ -3073,7 +3163,7 @@
   },
   {
     "indexGroup": 61472,
-    "indexOffset": 991408,
+    "indexOffset": 1006080,
     "size": 1,
     "name": "MAIN.fbPublic.fbColdStore.bCoolingUnitOff",
     "type": "BOOL",
@@ -3081,7 +3171,7 @@
   },
   {
     "indexGroup": 61488,
-    "indexOffset": 991409,
+    "indexOffset": 1006081,
     "size": 1,
     "name": "MAIN.fbPublic.fbColdStore.bCoolingUnitRoomCoolingFansOn",
     "type": "BOOL",
@@ -3089,7 +3179,7 @@
   },
   {
     "indexGroup": 61472,
-    "indexOffset": 992260,
+    "indexOffset": 1006932,
     "size": 4,
     "name": "MAIN.fbPublic.fbColdStore.fbCoolingUnitRoomTemperature.aKl3208In",
     "type": "Tc2_IoFunctions.ST_KL3208InData",
@@ -3097,7 +3187,7 @@
   },
   {
     "indexGroup": 61488,
-    "indexOffset": 992256,
+    "indexOffset": 1006928,
     "size": 4,
     "name": "MAIN.fbPublic.fbColdStore.fbCoolingUnitRoomTemperature.aKl3208Out",
     "type": "Tc2_IoFunctions.ST_KL3208OutData",
@@ -3105,7 +3195,15 @@
   },
   {
     "indexGroup": 61488,
-    "indexOffset": 996668,
+    "indexOffset": 1014606,
+    "size": 1,
+    "name": "MAIN.fbPublic.fbLaundry.bExhaustFan",
+    "type": "BOOL",
+    "comment": " Hardware"
+  },
+  {
+    "indexGroup": 61488,
+    "indexOffset": 1011340,
     "size": 1,
     "name": "MAIN.fbPublic.fbLaundry.fbHeating.bHeatingPumpAndValve",
     "type": "BOOL",
@@ -3113,7 +3211,7 @@
   },
   {
     "indexGroup": 61488,
-    "indexOffset": 996667,
+    "indexOffset": 1011339,
     "size": 1,
     "name": "MAIN.fbPublic.fbLaundry.fbHeating.bHeatingVentilator",
     "type": "BOOL",
@@ -3121,7 +3219,7 @@
   },
   {
     "indexGroup": 61488,
-    "indexOffset": 999594,
+    "indexOffset": 1014618,
     "size": 1,
     "name": "MAIN.fbPublic.fbLight.bControl",
     "type": "BOOL",
@@ -3129,7 +3227,7 @@
   },
   {
     "indexGroup": 61472,
-    "indexOffset": 999593,
+    "indexOffset": 1014617,
     "size": 1,
     "name": "MAIN.fbPublic.fbLight.bState",
     "type": "BOOL",

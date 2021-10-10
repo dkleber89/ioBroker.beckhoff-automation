@@ -1,48 +1,43 @@
-/**
- * This is a dummy TypeScript test file using chai and mocha
- *
- * It's automatically excluded from npm and its build output is excluded from both git and npm.
- * It is advised to test all your modules with accompanying *.test.ts-files
- */
-
-import { createLoggerMock, MockLogger } from '@iobroker/testing/build/tests/unit/mocks/mockLogger';
 import { expect } from 'chai';
 
 import datatype from '../../dev/datatyps.json';
 import symbols from '../../dev/symbols.json';
+import { loggerMock } from '../../test/utils/loggerMock';
 import { RuntimeType } from '../NodeAdsClient';
 import { NodeAdsVariableTable } from './NodeAdsVariableTable';
 
 describe('Testing NodeAdsVariableTable', function () {
-  let mockLogger: MockLogger | undefined;
-
-  before(function () {
-    mockLogger = createLoggerMock();
-  });
-
-  it(`should return empty handles`, function () {
-    if (!mockLogger) {
-      throw new Error('Mock Logger not working');
-    }
-
-    const nodeAdsVariableTable = new NodeAdsVariableTable('fisch', RuntimeType.TwinCat3, mockLogger, datatype, symbols);
-
-    expect(nodeAdsVariableTable.handles.length).to.be.equal(0);
-  });
-
-  it(`should return handles`, function () {
-    if (!mockLogger) {
-      throw new Error('Mock Logger not working');
-    }
-
+  it(`should return empty handles array`, function () {
     const nodeAdsVariableTable = new NodeAdsVariableTable(
-      'GVL_test',
+      'wrongTable',
       RuntimeType.TwinCat3,
-      mockLogger,
+      loggerMock,
       datatype,
       symbols
     );
 
-    expect(nodeAdsVariableTable.handles.length).to.be.equal(24);
+    expect(nodeAdsVariableTable.handles.length).to.be.equal(0);
+
+    const nodeAdsVariableTable1 = new NodeAdsVariableTable(
+      'GVL_test',
+      RuntimeType.TwinCat2, // Wrong Runtime ... No handles should be selected
+      loggerMock,
+      datatype,
+      symbols
+    );
+
+    expect(nodeAdsVariableTable1.handles.length).to.be.equal(0);
+  });
+
+  it(`should return 21 handles when test to GVL_test`, function () {
+    const nodeAdsVariableTable = new NodeAdsVariableTable(
+      'GVL_test',
+      RuntimeType.TwinCat3,
+      loggerMock,
+      datatype,
+      symbols
+    );
+
+    expect(nodeAdsVariableTable.handles.length).to.be.equal(21);
   });
 });

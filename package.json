@@ -82,7 +82,7 @@
     "lint": "eslint . --ext .ts,.tsx,.js",
     "lint:fix": "npm run lint -- --fix",
     "test:ts": "mocha --config test/mocharc.custom.json src/**/*.test.ts",
-    "test:watch": "npm run test:ts -- --watch --watch-extensions ts",
+    "test:watch": "npm run test:ts -- --watch",
     "test:coverage": "nyc npm run test:ts",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",

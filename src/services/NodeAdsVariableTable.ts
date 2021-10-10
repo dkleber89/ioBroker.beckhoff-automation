@@ -88,6 +88,8 @@ export class NodeAdsVariableTable {
 
   private _runtimeType: RuntimeType;
 
+  private _arrayName: string | null = null;
+
   constructor(
     targetVariableTable: string,
     runtimeType: RuntimeType,
@@ -115,39 +117,56 @@ export class NodeAdsVariableTable {
       }
     });
 
-    this._createHandles(datatyps);
-  }
-
-  private _createHandles(datatyps: AdsDatatyp[]) {
     this._handles = [];
 
     this._relevantSymbols.forEach(symbol => {
-      const tempHandle: AdsClientHandle = {};
+      this._createHandles(datatyps, symbol);
+    });
+  }
 
-      if (!symbol.arrayid) {
-        if (supportedDatatyps[symbol.type as keyof SupportedDatatyps]) {
-          tempHandle.symname = symbol.name;
-          tempHandle.bytelength = supportedDatatyps[symbol.type as keyof SupportedDatatyps];
-        } else if (symbol.type.startsWith('STRING(')) {
-          tempHandle.symname = symbol.name;
-          tempHandle.bytelength = string(
-            parseInt(symbol.type.slice(symbol.type.indexOf('(') + 1, symbol.type.indexOf(')')), 10)
-          );
-        } else {
+  private _createHandles(datatyps: AdsDatatyp[], symbol: AdsSymbol, datatype?: AdsDatatyp, prefix?: string) {
+    const tempHandle: AdsClientHandle = {};
+
+    const symbolName = prefix && datatype ? `${prefix}${datatype.name}` : symbol.name;
+
+    if (!symbol.arrayid) {
+      if (supportedDatatyps[symbol.type as keyof SupportedDatatyps]) {
+        tempHandle.symname = symbol.name;
+        tempHandle.bytelength = supportedDatatyps[symbol.type as keyof SupportedDatatyps];
+
+        this._handles.push(tempHandle);
+      } else if (symbol.type.startsWith('STRING(')) {
+        tempHandle.symname = symbol.name;
+        tempHandle.bytelength = string(
+          parseInt(symbol.type.slice(symbol.type.indexOf('(') + 1, symbol.type.indexOf(')')), 10)
+        );
+
+        this._handles.push(tempHandle);
+      } else {
+        const datatyp = datatyps.find(datatyp => datatyp.name === symbol.type);
+
+        if (!datatyp) {
           this._iobrokerLogger.warn(
             `Unsupported Variable (${symbol.name}) found in Variable Table (${this._targetVariableTable})`
           );
+
+          return;
         }
 
-        this._handles.push(tempHandle);
-
-        return;
+        // TODO: Next
+        this._createHandles(datatyps, symbol, datatyp);
       }
 
+      return;
+    }
+
+    if (!this._arrayName || !symbol.name.includes(this._arrayName)) {
+      this._arrayName = symbol.name.substring(0, symbol.name.indexOf('['));
+
       this._iobrokerLogger.warn(
-        `Unsupported Array (${symbol.name}) found in Variable Table (${this._targetVariableTable})`
+        `Unsupported Array (${this._arrayName}) found in Variable Table (${this._targetVariableTable})`
       );
-    });
+    }
   }
 
   get handles(): AdsClientHandle[] {
