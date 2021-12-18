@@ -1,3 +1,4 @@
+import { AdapterInstance } from '@iobroker/adapter-core';
 import {
   AdsClient,
   AdsClientConnectOptions,
@@ -15,6 +16,8 @@ export enum RuntimeType {
   TwinCat2WithConfigFile,
 }
 
+type Adapter = Pick<AdapterInstance, 'log' | 'setStateChangedAsync'>;
+
 export class NodeAdsClient {
   private _adsClientConnectOptions: AdsClientConnectOptions;
 
@@ -24,7 +27,7 @@ export class NodeAdsClient {
 
   private _checkDeviceStateInterval: NodeJS.Timeout | null = null;
 
-  private _iobrokerLogger: ioBroker.Logger;
+  private _adapter: Adapter;
 
   public connected = false;
 
@@ -38,22 +41,22 @@ export class NodeAdsClient {
 
   private _symbols: AdsSymbol[] | null = null;
 
-  constructor(adsClientConnectOptions: AdsClientConnectOptions, logger: ioBroker.Logger) {
+  constructor(adsClientConnectOptions: AdsClientConnectOptions, adapter: AdapterInstance) {
     this._adsClientConnectOptions = adsClientConnectOptions;
-    this._iobrokerLogger = logger;
+    this._adapter = { log: adapter.log, setStateChangedAsync: adapter.setStateChangedAsync };
 
     this._adsClient = connect(adsClientConnectOptions, () => {
       this._onConnected();
     });
 
     this._adsClient.on('timeout', error => {
-      this._iobrokerLogger.error(error);
+      this._adapter.log.error(error);
 
       this._onDisconnecting();
     });
 
     this._adsClient.on('error', error => {
-      this._iobrokerLogger.error(error);
+      this._adapter.log.error(error);
 
       this._onDisconnecting();
     });
@@ -97,12 +100,12 @@ export class NodeAdsClient {
   }
 
   private _onConnected(): void {
-    this.connected = true;
+    this._setConnectionState = true;
 
     this._checkDeviceStateInterval = setInterval(() => {
       this._adsClient.readDeviceInfo((error, result) => {
         if (error) {
-          this._iobrokerLogger.error(error.message);
+          this._adapter.log.error(error.message);
 
           this._onDisconnecting();
         }
@@ -121,7 +124,7 @@ export class NodeAdsClient {
       this._checkDeviceStateInterval = null;
     }
 
-    this.connected = false;
+    this._setConnectionState = false;
     this.deviceInfo = null;
 
     this._adsClient.end(() => {
@@ -133,26 +136,16 @@ export class NodeAdsClient {
     // TODO
   }
 
-  public registerNotificationHandler(callback: (handle: AdsClientHandleAnswer) => void): void {
-    this._adsClient.on('notification', (handle: AdsClientHandleAnswer) => {
-      if (handle.indexGroup === ADSIGRP.SYM_VERSION || handle.symname?.includes('iobrokerresync')) {
-        return;
-      }
-
-      callback(handle);
-    });
-  }
-
   private _syncVarTable(): void {
     this._adsClient.getDatatyps((error, datatyps) => {
       if (error) {
-        this._iobrokerLogger.error(error.message);
+        this._adapter.log.error(error.message);
 
         return;
       }
 
       if (!datatyps) {
-        this._iobrokerLogger.error('No Datatyps found on PLC');
+        this._adapter.log.error('No Datatyps found on PLC');
 
         return;
       }
@@ -162,18 +155,34 @@ export class NodeAdsClient {
 
     this._adsClient.getSymbols((error, symbols) => {
       if (error) {
-        this._iobrokerLogger.error(error.message);
+        this._adapter.log.error(error.message);
 
         return;
       }
 
       if (!symbols) {
-        this._iobrokerLogger.error('No Symbols found on PLC');
+        this._adapter.log.error('No Symbols found on PLC');
 
         return;
       }
 
       this._symbols = symbols;
+    });
+  }
+
+  private set _setConnectionState(newConnectionState: boolean) {
+    this.connected = newConnectionState;
+
+    this._adapter.setStateChangedAsync('info.connection', newConnectionState, true);
+  }
+
+  public registerNotificationHandler(callback: (handle: AdsClientHandleAnswer) => void): void {
+    this._adsClient.on('notification', (handle: AdsClientHandleAnswer) => {
+      if (handle.indexGroup === ADSIGRP.SYM_VERSION || handle.symname?.includes('iobrokerresync')) {
+        return;
+      }
+
+      callback(handle);
     });
   }
 }

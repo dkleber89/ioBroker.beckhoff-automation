@@ -181,7 +181,7 @@ export class NodeAdsVariableTable {
     }
 
     datatypeDatatyps.forEach(datatypeDatatype => {
-      if (!datatypeDatatype.) {
+      if (!datatypeDatatype) {
         if (supportedDatatyps[symbol.type as keyof SupportedDatatyps]) {
           tempHandle.symname = symbol.name;
           tempHandle.bytelength = supportedDatatyps[symbol.type as keyof SupportedDatatyps];

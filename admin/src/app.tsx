@@ -5,7 +5,7 @@ import GenericApp from '@iobroker/adapter-react/GenericApp';
 import { GenericAppProps, GenericAppSettings } from '@iobroker/adapter-react/types';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 
-import Settings from './components/settings';
+import { Settings } from './components';
 
 const styles = createStyles({
   root: {},
@@ -45,7 +45,7 @@ class App extends GenericApp {
 
     return (
       <div className="App">
-        <Settings native={this.state.native} onChange={(attr, value) => this.updateNativeValue(attr, value)} />
+        <Settings native={this.state.native} onNativeChange={(attr, value) => this.updateNativeValue(attr, value)} />
         {this.renderError()}
         {this.renderToast()}
         {this.renderSaveCloseButtons()}

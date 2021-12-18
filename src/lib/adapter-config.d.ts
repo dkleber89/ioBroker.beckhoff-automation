@@ -5,17 +5,23 @@ import { RuntimeType } from '../NodeAdsClient';
 // Augment the globally declared type ioBroker.AdapterConfig
 declare global {
   namespace ioBroker {
+    interface TpyFile {
+      name: string;
+      data: Record<string, any>;
+    }
     interface AdapterConfig {
       beckhoffRuntimeType: RuntimeType;
       targetIPAddress: string;
       targetAMSNetID: string;
+      targetAMSPort: number;
       targetTCPPort: number;
       targetVariableTables: string[];
+      adapterAMSNetID: string;
+      adapterAMSPort: number;
+      adapterTCPPort: number;
       timeout: number;
       reconnectInterval: number;
-      adapterAMSNetID: string;
-      adapterAMSPort: string;
-      tpyFile?: string;
+      tpyFile?: TpyFile | null;
     }
   }
 }

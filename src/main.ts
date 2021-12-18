@@ -1,6 +1,10 @@
 import * as utils from '@iobroker/adapter-core';
 
+import { NodeAdsClient } from './NodeAdsClient';
+
 class BeckhoffAutomation extends utils.Adapter {
+  private _nodeAdsClient: NodeAdsClient | null = null;
+
   public constructor(options: Partial<utils.AdapterOptions> = {}) {
     super({
       ...options,
@@ -9,7 +13,6 @@ class BeckhoffAutomation extends utils.Adapter {
     this.on('ready', this.onReady.bind(this));
     this.on('stateChange', this.onStateChange.bind(this));
     this.on('objectChange', this.onObjectChange.bind(this));
-    // this.on('message', this.onMessage.bind(this));
     this.on('unload', this.onUnload.bind(this));
   }
 
@@ -18,14 +21,23 @@ class BeckhoffAutomation extends utils.Adapter {
    */
   private async onReady(): Promise<void> {
     // Initialize your adapter here
+    this.setState('info.connection', false, true); // Reset the connection indicator during startup
 
-    this.config.this // Reset the connection indicator during startup
-      .setState('info.connection', false, true);
-
-    // The adapters config (in the instance object everything under the attribute "native") is accessible via
-    // this.config:
-    this.log.info(`config option1: ${this.config.option1}`);
-    this.log.info(`config option2: ${this.config.option2}`);
+    this._nodeAdsClient = new NodeAdsClient(
+      {
+        host: this.config.targetIPAddress,
+        amsNetIdTarget: this.config.targetAMSNetID,
+        amsNetIdSource: this.config.adapterAMSNetID,
+        port: this.config.targetTCPPort,
+        amsPortSource: this.config.adapterAMSPort,
+        amsPortTarget: this.config.targetAMSPort,
+        timeout: this.config.timeout,
+        localPort: this.config.adapterTCPPort,
+        family: 4,
+        verbose: this.log.level === 'debug' ? 1 : this.log.level === 'silly' ? 2 : 0,
+      },
+      this
+    );
 
     /*
 		For every state in the system there has to be also an object of type state

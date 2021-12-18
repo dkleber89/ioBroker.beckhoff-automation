@@ -1,141 +1,146 @@
-import React from 'react';
+import React, { ReactElement, useState } from 'react';
 
 import I18n from '@iobroker/adapter-react/i18n';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Input from '@material-ui/core/Input';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import { withStyles } from '@material-ui/core/styles';
-import { CreateCSSProperties } from '@material-ui/core/styles/withStyles';
-import TextField from '@material-ui/core/TextField';
+import { Box, Grid, Tab, Tabs } from '@material-ui/core';
 
-const styles = (): Record<string, CreateCSSProperties> => ({
-  input: {
-    marginTop: 0,
-    minWidth: 400,
-  },
-  button: {
-    marginRight: 20,
-  },
-  card: {
-    maxWidth: 345,
-    textAlign: 'center',
-  },
-  media: {
-    height: 180,
-  },
-  column: {
-    display: 'inline-block',
-    verticalAlign: 'top',
-    marginRight: 20,
-  },
-  columnLogo: {
-    width: 350,
-    marginRight: 0,
-  },
-  columnSettings: {
-    width: 'calc(100% - 370px)',
-  },
-  controlElement: {
-    // background: "#d2d2d2",
-    marginBottom: 5,
-  },
-});
+import { AddRemoveElements } from './AddRemoveElements';
+import { MySelect } from './MySelect';
+import { MyTextField } from './MyTextField';
+import { MyUpload } from './MyUpload';
+import { TabPanel } from './Tabpanel';
 
 interface SettingsProps {
-  classes: Record<string, string>;
-  native: Record<string, any>;
-
-  onChange: (attr: string, value: any) => void;
+  native: ioBroker.AdapterConfig;
+  onNativeChange: (attr: string, value: unknown) => void;
 }
 
-interface SettingsState {
-  // add your state properties here
-  dummy?: undefined;
-}
+export const Settings = ({ native, onNativeChange }: SettingsProps): ReactElement => {
+  const [actualTab, setActualTab] = useState<string>('required');
 
-class Settings extends React.Component<SettingsProps, SettingsState> {
-  constructor(props: SettingsProps) {
-    super(props);
-    this.state = {};
-  }
-
-  renderInput(title: AdminWord, attr: string, type: string) {
-    return (
-      <TextField
-        label={I18n.t(title)}
-        className={`${this.props.classes.input} ${this.props.classes.controlElement}`}
-        value={this.props.native[attr]}
-        type={type || 'text'}
-        onChange={e => this.props.onChange(attr, e.target.value)}
-        margin="normal"
-      />
-    );
-  }
-
-  renderSelect(
-    title: AdminWord,
-    attr: string,
-    options: { value: string; title: AdminWord }[],
-    style?: React.CSSProperties
-  ) {
-    return (
-      <FormControl
-        className={`${this.props.classes.input} ${this.props.classes.controlElement}`}
-        style={{
-          paddingTop: 5,
-          ...style,
-        }}
-      >
-        <Select
-          value={this.props.native[attr] || '_'}
-          onChange={e => this.props.onChange(attr, e.target.value === '_' ? '' : e.target.value)}
-          input={<Input name={attr} id={`${attr}-helper`} />}
-        >
-          {options.map(item => (
-            <MenuItem key={`key-${item.value}`} value={item.value || '_'}>
-              {I18n.t(item.title)}
-            </MenuItem>
-          ))}
-        </Select>
-        <FormHelperText>{I18n.t(title)}</FormHelperText>
-      </FormControl>
-    );
-  }
-
-  renderCheckbox(title: AdminWord, attr: string, style?: React.CSSProperties) {
-    return (
-      <FormControlLabel
-        key={attr}
-        style={{
-          paddingTop: 5,
-          ...style,
-        }}
-        className={this.props.classes.controlElement}
-        control={
-          <Checkbox
-            checked={this.props.native[attr]}
-            onChange={() => this.props.onChange(attr, !this.props.native[attr])}
-            color="primary"
-          />
-        }
-        label={I18n.t(title)}
-      />
-    );
-  }
-
-  render() {
-    return (
-      <form className={this.props.classes.tab}>
-        {this.renderCheckbox('option1', 'option1')}
-        <br />
-        {this.renderInput('option2', 'option2', 'text')}
-      </form>
-    );
-  }
-}
-
-export default withStyles(styles)(Settings);
+  return (
+    <>
+      <Tabs value={actualTab} onChange={(e, newValue) => setActualTab(newValue)}>
+        <Tab label={I18n.t('requiredTab')} value="required" />
+        <Tab label={I18n.t('optionalTab')} value="optional" />
+      </Tabs>
+      <TabPanel panelId="required" activePanelId={actualTab}>
+        <Box p={2}>
+          <Grid container spacing={2}>
+            <Grid item>
+              <MySelect
+                attribute="beckhoffRuntimeType"
+                title="beckhoffRuntimeType"
+                native={native}
+                onNativeChange={onNativeChange}
+                options={[
+                  { title: 'beckhoffRuntimeTypeOption0', value: 0 },
+                  { title: 'beckhoffRuntimeTypeOption1', value: 1 },
+                  { title: 'beckhoffRuntimeTypeOption2', value: 2 },
+                ]}
+              />
+            </Grid>
+            <Grid item>
+              <MyTextField
+                attribute="targetIPAddress"
+                title="targetIPAddress"
+                native={native}
+                onNativeChange={onNativeChange}
+              />
+            </Grid>
+            <Grid item>
+              <MyTextField
+                attribute="targetAMSNetID"
+                title="targetAMSNetID"
+                native={native}
+                onNativeChange={onNativeChange}
+              />
+            </Grid>
+            <Grid item>
+              <MyTextField
+                attribute="targetAMSPort"
+                title="targetAMSPort"
+                native={native}
+                onNativeChange={onNativeChange}
+                type="number"
+              />
+            </Grid>
+            <Grid item>
+              <MyTextField
+                attribute="targetTCPPort"
+                title="targetTCPPort"
+                native={native}
+                onNativeChange={onNativeChange}
+                type="number"
+              />
+            </Grid>
+          </Grid>
+          <Grid container spacing={2}>
+            <Grid item>
+              <AddRemoveElements
+                attribute="targetVariableTables"
+                title="targetVariableTables"
+                native={native}
+                onNativeChange={onNativeChange}
+              />
+            </Grid>
+            {native.beckhoffRuntimeType === 2 && (
+              <Grid item>
+                <MyUpload attribute="tpyFile" title="tpyFile" native={native} onNativeChange={onNativeChange} />
+              </Grid>
+            )}
+          </Grid>
+        </Box>
+      </TabPanel>
+      <TabPanel panelId="optional" activePanelId={actualTab}>
+        <Box p={2}>
+          <Grid container spacing={2}>
+            <Grid item>
+              <MyTextField
+                attribute="adapterAMSNetID"
+                title="adapterAMSNetID"
+                native={native}
+                onNativeChange={onNativeChange}
+              />
+            </Grid>
+            <Grid item>
+              <MyTextField
+                attribute="adapterAMSPort"
+                title="adapterAMSPort"
+                native={native}
+                onNativeChange={onNativeChange}
+                type="number"
+              />
+            </Grid>
+            <Grid item>
+              <MyTextField
+                attribute="adapterTCPPort"
+                title="adapterTCPPort"
+                native={native}
+                onNativeChange={onNativeChange}
+                type="number"
+              />
+            </Grid>
+            <Grid item>
+              <MyTextField
+                attribute="timeout"
+                title="timeout"
+                native={native}
+                onNativeChange={onNativeChange}
+                type="number"
+              />
+            </Grid>
+            <Grid item>
+              <MyTextField
+                attribute="reconnectInterval"
+                title="reconnectInterval"
+                native={native}
+                onNativeChange={onNativeChange}
+                type="number"
+              />
+            </Grid>
+          </Grid>
+        </Box>
+      </TabPanel>
+    </>
+  );
+};
