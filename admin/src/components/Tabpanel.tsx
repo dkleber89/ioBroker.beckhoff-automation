@@ -1,7 +1,5 @@
 import React, { ReactElement, ReactNode } from 'react';
 
-import { Box } from '@material-ui/core';
-
 interface TabPanelProps {
   panelId: string;
   activePanelId: string;

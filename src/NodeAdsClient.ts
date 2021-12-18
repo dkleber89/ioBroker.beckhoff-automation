@@ -132,6 +132,7 @@ export class NodeAdsClient {
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   private _newSync(): void {
     // TODO
   }
