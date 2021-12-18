@@ -5,7 +5,7 @@ import theme from '@iobroker/adapter-react/Theme';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import ReactDOM from 'react-dom';
 
-import App from './app';
+import App from './app_1';
 
 let themeName = Utils.getThemeName();
 
