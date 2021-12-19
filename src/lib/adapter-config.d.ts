@@ -7,7 +7,7 @@ declare global {
   namespace ioBroker {
     interface TpyFile {
       name: string;
-      data: Record<string, any>;
+      data: string;
     }
     interface AdapterConfig {
       beckhoffRuntimeType: RuntimeType;
