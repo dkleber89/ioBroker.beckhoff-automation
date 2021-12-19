@@ -1,5 +1,20 @@
 {
-    "beckhoff-automation adapter settings": "Adapter settings for beckhoff-automation",
-    "option1": "option1",
-    "option2": "option2"
+  "beckhoffRuntimeType": "Target Runtime Type",
+  "beckhoffRuntimeTypeOption0": "TwinCat 3",
+  "beckhoffRuntimeTypeOption1": "TwinCat 2",
+  "beckhoffRuntimeTypeOption2": "TwinCat 2 with configuration File",
+  "targetIPAddress": "Target IP Address",
+  "targetAMSNetID": "Target AMS Net ID",
+  "targetAMSPort": "Target AMS Port",
+  "targetTCPPort": "Target TCP Port",
+  "targetVariableTables": "Target Variable Tables",
+  "adapterAMSNetID": "Adapter AMS Net ID",
+  "adapterAMSPort": "Adapter AMS Port",
+  "adapterTCPPort": "Adapter TCP Port",
+  "timeout": "Timeout in seconds",
+  "reconnectInterval": "Reconnect interval in seconds",
+  "tpyFile": "Upload *.tpy File",
+  "requiredTab": "Required Settings",
+  "optionalTab": "Optional Settings",
+  "add": "Add"
 }

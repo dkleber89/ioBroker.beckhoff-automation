@@ -1,7 +1,4 @@
 "use strict";
-/*
- * Created with @iobroker/create-adapter v1.34.1
- */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -22,21 +19,18 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// The adapter-core module gives you access to the core ioBroker functions
-// you need to create an adapter
 const utils = __importStar(require("@iobroker/adapter-core"));
-// Load your modules here, e.g.:
-// import * as fs from "fs";
+const NodeAdsClient_1 = require("./NodeAdsClient");
 class BeckhoffAutomation extends utils.Adapter {
     constructor(options = {}) {
         super({
             ...options,
             name: 'beckhoff-automation',
         });
+        this._nodeAdsClient = null;
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
-        // this.on('objectChange', this.onObjectChange.bind(this));
-        // this.on('message', this.onMessage.bind(this));
+        this.on('objectChange', this.onObjectChange.bind(this));
         this.on('unload', this.onUnload.bind(this));
     }
     /**
@@ -44,12 +38,19 @@ class BeckhoffAutomation extends utils.Adapter {
      */
     async onReady() {
         // Initialize your adapter here
-        // Reset the connection indicator during startup
-        this.setState('info.connection', false, true);
-        // The adapters config (in the instance object everything under the attribute "native") is accessible via
-        // this.config:
-        this.log.info(`config option1: ${this.config.option1}`);
-        this.log.info(`config option2: ${this.config.option2}`);
+        this.setState('info.connection', false, true); // Reset the connection indicator during startup
+        this._nodeAdsClient = new NodeAdsClient_1.NodeAdsClient({
+            host: this.config.targetIPAddress,
+            amsNetIdTarget: this.config.targetAMSNetID,
+            amsNetIdSource: this.config.adapterAMSNetID,
+            port: this.config.targetTCPPort,
+            amsPortSource: this.config.adapterAMSPort,
+            amsPortTarget: this.config.targetAMSPort,
+            timeout: this.config.timeout,
+            localPort: this.config.adapterTCPPort,
+            family: 4,
+            verbose: this.log.level === 'debug' ? 1 : this.log.level === 'silly' ? 2 : 0,
+        }, this);
         /*
             For every state in the system there has to be also an object of type state
             Here a simple template for a boolean variable named "testVariable"
@@ -109,18 +110,19 @@ class BeckhoffAutomation extends utils.Adapter {
     }
     // If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
     // You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
-    // /**
-    //  * Is called if a subscribed object changes
-    //  */
-    // private onObjectChange(id: string, obj: ioBroker.Object | null | undefined): void {
-    //     if (obj) {
-    //         // The object was changed
-    //         this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-    //     } else {
-    //         // The object was deleted
-    //         this.log.info(`object ${id} deleted`);
-    //     }
-    // }
+    /**
+     * Is called if a subscribed object changes
+     */
+    onObjectChange(id, obj) {
+        if (obj) {
+            // The object was changed
+            this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
+        }
+        else {
+            // The object was deleted
+            this.log.info(`object ${id} deleted`);
+        }
+    }
     /**
      * Is called if a subscribed state changes
      */

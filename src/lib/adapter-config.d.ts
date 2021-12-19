@@ -1,11 +1,27 @@
 // This file extends the AdapterConfig type from "@types/iobroker"
 
+import { RuntimeType } from '../NodeAdsClient';
+
 // Augment the globally declared type ioBroker.AdapterConfig
 declare global {
   namespace ioBroker {
+    interface TpyFile {
+      name: string;
+      data: Record<string, any>;
+    }
     interface AdapterConfig {
-      option1: boolean;
-      option2: string;
+      beckhoffRuntimeType: RuntimeType;
+      targetIPAddress: string;
+      targetAMSNetID: string;
+      targetAMSPort: number;
+      targetTCPPort: number;
+      targetVariableTables: string[];
+      adapterAMSNetID: string;
+      adapterAMSPort: number;
+      adapterTCPPort: number;
+      timeout: number;
+      reconnectInterval: number;
+      tpyFile?: TpyFile | null;
     }
   }
 }

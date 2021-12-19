@@ -915,6 +915,42 @@
   },
   {
     "version": 1,
+    "size": 50,
+    "dataType": 33,
+    "arrayDim": 2,
+    "subItems": 0,
+    "name": "ARRAY [1..10,1..5] OF BOOL",
+    "type": "BOOL",
+    "comment": "",
+    "array": [
+      {
+        "lBound": 1,
+        "elements": 10
+      },
+      {
+        "lBound": 1,
+        "elements": 5
+      }
+    ]
+  },
+  {
+    "version": 1,
+    "size": 10,
+    "dataType": 33,
+    "arrayDim": 1,
+    "subItems": 0,
+    "name": "ARRAY [1..10] OF BOOL",
+    "type": "BOOL",
+    "comment": "",
+    "array": [
+      {
+        "lBound": 1,
+        "elements": 10
+      }
+    ]
+  },
+  {
+    "version": 1,
     "size": 116920,
     "dataType": 65,
     "arrayDim": 1,
@@ -1330,6 +1366,22 @@
       {
         "lBound": 1,
         "elements": 4
+      }
+    ]
+  },
+  {
+    "version": 1,
+    "size": 5,
+    "dataType": 33,
+    "arrayDim": 1,
+    "subItems": 0,
+    "name": "ARRAY [1..5] OF BOOL",
+    "type": "BOOL",
+    "comment": "",
+    "array": [
+      {
+        "lBound": 1,
+        "elements": 5
       }
     ]
   },
@@ -3377,10 +3429,10 @@
   },
   {
     "version": 1,
-    "size": 5152,
+    "size": 5504,
     "dataType": 65,
     "arrayDim": 0,
-    "subItems": 4,
+    "subItems": 12,
     "name": "FB_laundry",
     "type": "",
     "comment": "",
@@ -3428,6 +3480,94 @@
         "name": "bHeatingVentilatorStatus",
         "type": "BOOL",
         "comment": ""
+      },
+      {
+        "index": 5,
+        "version": 1,
+        "size": 4,
+        "dataType": 4,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "rDewPointReal",
+        "type": "REAL",
+        "comment": ""
+      },
+      {
+        "index": 6,
+        "version": 1,
+        "size": 4,
+        "dataType": 4,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "rDewPointCalc",
+        "type": "REAL",
+        "comment": ""
+      },
+      {
+        "index": 7,
+        "version": 1,
+        "size": 336,
+        "dataType": 65,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "fbOperatingValues",
+        "type": "Tc2_HVAC.FB_HVACWork",
+        "comment": ""
+      },
+      {
+        "index": 8,
+        "version": 1,
+        "size": 2,
+        "dataType": 18,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "uiWarnLevel",
+        "type": "UINT",
+        "comment": ""
+      },
+      {
+        "index": 9,
+        "version": 1,
+        "size": 2,
+        "dataType": 18,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "uiAlarmLevel",
+        "type": "UINT",
+        "comment": ""
+      },
+      {
+        "index": 10,
+        "version": 1,
+        "size": 1,
+        "dataType": 33,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "bEnableWarnLevel",
+        "type": "BOOL",
+        "comment": ""
+      },
+      {
+        "index": 11,
+        "version": 1,
+        "size": 1,
+        "dataType": 33,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "bEnableAlarmLevel",
+        "type": "BOOL",
+        "comment": ""
+      },
+      {
+        "index": 12,
+        "version": 1,
+        "size": 1,
+        "dataType": 33,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "bExhaustFan",
+        "type": "BOOL",
+        "comment": " Hardware"
       }
     ]
   },
@@ -4776,7 +4916,7 @@
   },
   {
     "version": 1,
-    "size": 8368,
+    "size": 8720,
     "dataType": 65,
     "arrayDim": 0,
     "subItems": 4,
@@ -4798,7 +4938,7 @@
       {
         "index": 2,
         "version": 1,
-        "size": 5152,
+        "size": 5504,
         "dataType": 65,
         "arrayDim": 0,
         "subItems": 0,
@@ -9176,10 +9316,10 @@
   },
   {
     "version": 1,
-    "size": 12,
+    "size": 20,
     "dataType": 65,
     "arrayDim": 0,
-    "subItems": 3,
+    "subItems": 4,
     "name": "ST_IOBROKER_LAUNDRY",
     "type": "",
     "comment": "",
@@ -9214,6 +9354,17 @@
         "arrayDim": 0,
         "subItems": 0,
         "name": "operatingValuesHeatingVentilator",
+        "type": "ST_IOBROKER_OPERATING_VALUES",
+        "comment": ""
+      },
+      {
+        "index": 4,
+        "version": 1,
+        "size": 8,
+        "dataType": 65,
+        "arrayDim": 0,
+        "subItems": 0,
+        "name": "operatingValuesExhaustVentilator",
         "type": "ST_IOBROKER_OPERATING_VALUES",
         "comment": ""
       }
