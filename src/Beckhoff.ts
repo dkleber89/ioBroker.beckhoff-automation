@@ -141,7 +141,7 @@ export class Beckhoff {
   public async killAll(): Promise<void> {
     return new Promise((resolve, reject) => {
       const timeout = setTimeout(() => {
-        reject();
+        reject(new Error('Timeout reached before everything cleaned up.'));
       }, this._adapter.config.timeout);
 
       if (this._checkDeviceStateInterval) {
