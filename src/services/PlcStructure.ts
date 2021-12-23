@@ -79,7 +79,7 @@ export class PlcStructure {
               return;
             }
 
-            resolve(datatyps ?? null);
+            resolve(datatyps && datatyps.length >= 1 ? datatyps : null);
           });
         }),
         new Promise<AdsSymbol[] | null>((resolve, reject) => {
@@ -92,7 +92,7 @@ export class PlcStructure {
               return;
             }
 
-            resolve(symbols ?? null);
+            resolve(symbols && symbols.length >= 1 ? symbols : null);
           });
         }),
       ]);
@@ -106,6 +106,7 @@ export class PlcStructure {
       }
 
       this._writeNewData(allPromiseResults[0], allPromiseResults[1]);
+
       return;
     } catch {
       this._onError();

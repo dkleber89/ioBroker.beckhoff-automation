@@ -1,6 +1,6 @@
 // This file extends the AdapterConfig type from "@types/iobroker"
 
-import { RuntimeType } from '../NodeAdsClient';
+import { RuntimeType } from '../Beckhoff';
 
 // Augment the globally declared type ioBroker.AdapterConfig
 declare global {

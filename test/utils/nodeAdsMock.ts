@@ -16,8 +16,11 @@ import deviceInfo from './mockData/deviceInfo.json';
 import { RuntimeType } from '../../src/Beckhoff';
 import EventEmitter from 'events';
 
-export function nodeAdsMock(runtimeType: RuntimeType): AdsClient {
+type AdsClientMock = AdsClient & { setReturnNoData: (value: boolean) => void };
+
+export function nodeAdsMock(runtimeType: RuntimeType, error?: boolean, noData?: boolean): AdsClientMock {
   const eventEmitter = new EventEmitter();
+  let returnNoData = noData;
 
   const options: AdsOptions = {
     host: 'string',
@@ -33,7 +36,7 @@ export function nodeAdsMock(runtimeType: RuntimeType): AdsClient {
     verbose: 0,
   };
 
-  const adsClient: AdsClient = Object.assign(eventEmitter, {
+  const adsClient: AdsClientMock = Object.assign(eventEmitter, {
     options,
     connect: (cb: (this: AdsClient) => void) => {
       cb.call(adsClient);
@@ -42,22 +45,22 @@ export function nodeAdsMock(runtimeType: RuntimeType): AdsClient {
       cb?.call(ads);
     },
     readDeviceInfo: (cb: (this: AdsClient, err: Error | null, result?: AdsReadDeviceInfoResult) => void) => {
-      cb.call(adsClient, null, undefined);
+      cb.call(adsClient, error ? new Error() : null, undefined);
     },
     read: (
       handle: AdsClientHandle,
       cb: (this: AdsClient, err: Error | null, handle: AdsClientHandleAnswer) => void
     ) => {
-      cb.call(adsClient, null, {});
+      cb.call(adsClient, error ? new Error() : null, {});
     },
     write: (handle: AdsClientHandle, cb: (this: AdsClient, err: Error | null) => void) => {
-      cb.call(adsClient, null);
+      cb.call(adsClient, error ? new Error() : null);
     },
     readState: (cb: (this: AdsClient, err: Error | null, result?: AdsReadStateResult) => void) => {
-      cb.call(adsClient, null, undefined);
+      cb.call(adsClient, error ? new Error() : null, undefined);
     },
     notify: (handle: AdsClientHandle, cb?: (this: AdsClient, err: Error | null) => void) => {
-      cb?.call(adsClient, null);
+      cb?.call(adsClient, error ? new Error() : null);
     },
     releaseNotificationHandles: (cb: (this: Ads) => void) => {
       cb.call(ads);
@@ -66,31 +69,42 @@ export function nodeAdsMock(runtimeType: RuntimeType): AdsClient {
       cb.call(ads);
     },
     writeRead: (handle: AdsClientHandle, cb: (this: Ads, err: Error | null, result: any) => void) => {
-      cb.call(ads, null, {});
+      cb.call(ads, error ? new Error() : null, {});
     },
     getSymbols: (cb: (this: AdsClient, err: Error | null, symbols?: AdsSymbol[]) => void, raw?: boolean) => {
-      cb.call(adsClient, null, runtimeType === RuntimeType.TwinCat3 ? tc3symbols : []);
+      cb.call(
+        adsClient,
+        error ? new Error() : null,
+        runtimeType === RuntimeType.TwinCat3 ? (returnNoData ? [] : tc3symbols) : []
+      );
     },
     getDatatyps: (cb: (this: AdsClient, err: Error | null, datatyps?: AdsDatatyp[]) => void) => {
-      cb.call(adsClient, null, runtimeType === RuntimeType.TwinCat3 ? tc3datatyps : []);
+      cb.call(
+        adsClient,
+        error ? new Error() : null,
+        runtimeType === RuntimeType.TwinCat3 ? (returnNoData ? [] : tc3datatyps) : []
+      );
     },
     multiRead: (
       handles: AdsClientHandle[],
       cb: (this: AdsClient, err: Error | null, handles?: AdsClientHandleAnswer[]) => void
     ) => {
-      cb.call(adsClient, null, undefined);
+      cb.call(adsClient, error ? new Error() : null, undefined);
     },
     multiWrite: (
       handles: AdsClientHandle[],
       cb: (this: AdsClient, err: Error | null, handles?: AdsClientHandle[]) => void
     ) => {
-      cb.call(adsClient, null, undefined);
+      cb.call(adsClient, error ? new Error() : null, undefined);
     },
     getHandles: (
       handles: AdsClientHandle[],
       cb: (this: AdsClient, error: Error | null, handles?: AdsClientHandle) => void
     ) => {
-      cb.call(adsClient, null, undefined);
+      cb.call(adsClient, error ? new Error() : null, undefined);
+    },
+    setReturnNoData: (value: boolean) => {
+      returnNoData = value;
     },
   });
 
