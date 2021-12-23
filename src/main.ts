@@ -1,9 +1,9 @@
 import * as utils from '@iobroker/adapter-core';
 
-import { NodeAdsClient } from './NodeAdsClient';
+import { Beckhoff } from './Beckhoff';
 
 class BeckhoffAutomation extends utils.Adapter {
-  private _nodeAdsClient: NodeAdsClient | null = null;
+  private _beckhoff: Beckhoff | null = null;
 
   public constructor(options: Partial<utils.AdapterOptions> = {}) {
     super({
@@ -23,21 +23,7 @@ class BeckhoffAutomation extends utils.Adapter {
     // Initialize your adapter here
     this.setState('info.connection', false, true); // Reset the connection indicator during startup
 
-    this._nodeAdsClient = new NodeAdsClient(
-      {
-        host: this.config.targetIPAddress,
-        amsNetIdTarget: this.config.targetAMSNetID,
-        amsNetIdSource: this.config.adapterAMSNetID,
-        port: this.config.targetTCPPort,
-        amsPortSource: this.config.adapterAMSPort,
-        amsPortTarget: this.config.targetAMSPort,
-        timeout: this.config.timeout,
-        localPort: this.config.adapterTCPPort,
-        family: 4,
-        verbose: this.log.level === 'debug' ? 1 : this.log.level === 'silly' ? 2 : 0,
-      },
-      this
-    );
+    this._beckhoff = new Beckhoff(this);
 
     /*
 		For every state in the system there has to be also an object of type state
@@ -90,13 +76,9 @@ class BeckhoffAutomation extends utils.Adapter {
    */
   // TODO
   // eslint-disable-next-line class-methods-use-this
-  private onUnload(callback: () => void): void {
+  private async onUnload(callback: () => void): Promise<void> {
     try {
-      // Here you must clear all timeouts or intervals that may still be active
-      // clearTimeout(timeout1);
-      // clearTimeout(timeout2);
-      // ...
-      // clearInterval(interval1);
+      this._beckhoff?.killAll();
 
       callback();
     } catch (e) {

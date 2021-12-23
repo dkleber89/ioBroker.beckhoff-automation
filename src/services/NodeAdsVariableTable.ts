@@ -27,7 +27,7 @@ import {
   WORD,
 } from 'node-ads';
 
-import { RuntimeType } from '../NodeAdsClient';
+import { RuntimeType } from '../Beckhoff';
 
 interface SupportedDatatyps {
   BOOL: AdsSymbolType;

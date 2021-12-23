@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import datatype from '../../dev/datatyps.json';
 import symbols from '../../dev/symbols.json';
 import { loggerMock } from '../../test/utils/loggerMock';
-import { RuntimeType } from '../NodeAdsClient';
+import { RuntimeType } from '../Beckhoff';
 import { NodeAdsVariableTable } from './NodeAdsVariableTable';
 
 describe('Testing NodeAdsVariableTable', function () {

@@ -59,14 +59,21 @@ export const MyUpload = ({
             if (file) {
               const fileReader = new FileReader();
 
-              fileReader.onload = async ev => {
-                parseString(ev.target?.result || '', (err, result) => {
-                  if (err) {
-                    onNativeChange(attribute, null);
-                  } else {
-                    onNativeChange(attribute, { name: file.name, data: result });
+              fileReader.onload = ev => {
+                // Parse String only for check
+                parseString(
+                  ev.target?.result || '',
+                  {
+                    normalize: true,
+                  },
+                  err => {
+                    if (err) {
+                      onNativeChange(attribute, null);
+                    } else {
+                      onNativeChange(attribute, { name: file.name, data: ev.target?.result as string });
+                    }
                   }
-                });
+                );
               };
 
               fileReader.onerror = () => {
