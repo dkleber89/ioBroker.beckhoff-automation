@@ -76,13 +76,9 @@ class BeckhoffAutomation extends utils.Adapter {
    */
   // TODO
   // eslint-disable-next-line class-methods-use-this
-  private onUnload(callback: () => void): void {
+  private async onUnload(callback: () => void): Promise<void> {
     try {
-      // Here you must clear all timeouts or intervals that may still be active
-      // clearTimeout(timeout1);
-      // clearTimeout(timeout2);
-      // ...
-      // clearInterval(interval1);
+      this._beckhoff?.killAll();
 
       callback();
     } catch (e) {

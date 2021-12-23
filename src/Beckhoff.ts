@@ -125,4 +125,30 @@ export class Beckhoff {
 
     this._adapter.setStateChangedAsync('info.connection', newConnectionState, true);
   }
+
+  public async killAll(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        reject();
+      }, this._adapter.config.timeout);
+
+      if (this._checkDeviceStateInterval) {
+        clearInterval(this._checkDeviceStateInterval);
+        this._checkDeviceStateInterval = null;
+      }
+
+      if (this._reconnectTimer) {
+        clearTimeout(this._reconnectTimer);
+        this._reconnectTimer = null;
+      }
+
+      if (this._adsClient) {
+        this._adsClient.end(() => {
+          clearTimeout(timeout);
+
+          resolve();
+        });
+      }
+    });
+  }
 }
