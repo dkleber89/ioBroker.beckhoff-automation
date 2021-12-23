@@ -2,6 +2,7 @@ import { AdapterInstance } from '@iobroker/adapter-core';
 import { AdsClient, AdsReadDeviceInfoResult, connect } from 'node-ads';
 
 import { PlcStructure } from './services/PlcStructure';
+import { VariableTable } from './services/VariableTable';
 
 export enum RuntimeType {
   TwinCat3,
@@ -21,6 +22,8 @@ export class Beckhoff {
   private _adsClient: AdsClient;
 
   private _plcStructure: PlcStructure;
+
+  private _variableTables: VariableTable[];
 
   private _checkDeviceStateInterval: NodeJS.Timeout | null = null;
 
@@ -66,6 +69,15 @@ export class Beckhoff {
     });
 
     this._plcStructure = new PlcStructure(adapterInstance, this._adsClient, this.connected, this._onDisconnecting);
+
+    this._variableTables = this._adapter.config.targetVariableTables.map(
+      targetVariableTable =>
+        new VariableTable(adapterInstance, targetVariableTable, this._plcStructure.datatyps, this._plcStructure.symbols)
+    );
+
+    this._plcStructure.onUpdated((datatyps, symbols) =>
+      this._variableTables.forEach(variableTable => variableTable.update(datatyps, symbols))
+    );
   }
 
   private async _onConnected(): Promise<void> {

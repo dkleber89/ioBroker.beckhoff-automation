@@ -98,17 +98,15 @@ export class VariableTable {
     this._adapter = { log: adapterInstance.log, config: adapterInstance.config };
     this._targetVariableTable = targetVariableTable;
 
-    if (datatyps && symbols) {
-      this.update(datatyps, symbols);
-    }
+    this.update(datatyps ?? null, symbols ?? null);
   }
 
-  public update(datatyps: AdsDatatyp[], symbols: AdsSymbol[]): void {
+  public update(datatyps: AdsDatatyp[] | null, symbols: AdsSymbol[] | null): void {
     const targetIndex = this._adapter.config.beckhoffRuntimeType === RuntimeType.TwinCat3 ? 0 : 1;
 
     const relevantSymbols: AdsSymbol[] = [];
 
-    symbols.forEach(symbol => {
+    symbols?.forEach(symbol => {
       if (symbol.name.toLowerCase().indexOf(this._targetVariableTable) === targetIndex) {
         relevantSymbols.push(symbol);
       }
@@ -117,9 +115,11 @@ export class VariableTable {
     // Remove old Handles before createNew ones
     this._handles = [];
 
-    relevantSymbols.forEach(symbol => {
-      this._createHandles(datatyps, symbol);
-    });
+    if (datatyps) {
+      relevantSymbols.forEach(symbol => {
+        this._createHandles(datatyps, symbol);
+      });
+    }
   }
 
   private _createHandles(datatyps: AdsDatatyp[], symbol?: AdsSymbol, datatyp?: AdsDatatyp, prefix?: string) {
