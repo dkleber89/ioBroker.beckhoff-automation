@@ -15,8 +15,7 @@ export class PlcStructure {
 
   private _adsClient: AdsClient;
 
-  private _onPlcStructureUpdatedCallbacks: ((datatyps: AdsDatatyp[] | null, symbols: AdsSymbol[] | null) => void)[] =
-    [];
+  private _onUpdatedCallbacks: ((datatyps: AdsDatatyp[] | null, symbols: AdsSymbol[] | null) => void)[] = [];
 
   private _onError: () => void;
 
@@ -132,21 +131,21 @@ export class PlcStructure {
     }
 
     if (newData) {
-      this._callOnPlcStructureUpdated();
+      this._callOnUpdated();
     }
   }
 
-  private _callOnPlcStructureUpdated(): void {
-    this._onPlcStructureUpdatedCallbacks.forEach(callback => {
+  private _callOnUpdated(): void {
+    this._onUpdatedCallbacks.forEach(callback => {
       callback(this._datatyps, this._symbols);
     });
   }
 
-  public onPlcStructureUpdated(callback: (datatyps: AdsDatatyp[] | null, symbols: AdsSymbol[] | null) => void): void {
-    this._onPlcStructureUpdatedCallbacks.push(callback);
+  public onUpdated(callback: (datatyps: AdsDatatyp[] | null, symbols: AdsSymbol[] | null) => void): void {
+    this._onUpdatedCallbacks.push(callback);
   }
 
-  public updatePlcStructure(): void {
+  public update(): void {
     if (this._adapter.config.beckhoffRuntimeType !== RuntimeType.TwinCat2WithConfigFile) {
       this._plcData();
     }

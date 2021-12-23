@@ -71,7 +71,7 @@ export class Beckhoff {
   private async _onConnected(): Promise<void> {
     this._setConnectionState = true;
 
-    this._plcStructure.updatePlcStructure();
+    this._plcStructure.update();
 
     this._checkDeviceStateInterval = setInterval(() => {
       this._adsClient.readDeviceInfo((error, result) => {
