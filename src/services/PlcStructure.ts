@@ -1,8 +1,29 @@
+import { writeFileSync } from 'fs';
+
 import { AdapterInstance } from '@iobroker/adapter-core';
 import { AdsClient, AdsDatatyp, AdsSymbol } from 'node-ads';
-import { parseStringPromise } from 'xml2js';
+import { parseString } from 'xml2js';
+import { firstCharLowerCase, parseBooleans, parseNumbers } from 'xml2js/lib/processors';
 
 import { RuntimeType } from '../Beckhoff';
+
+export interface BeckhoffDatatyp {
+  name: string;
+  type: string;
+  comment?: string;
+  datatyps?: BeckhoffDatatyp[];
+  array?: {
+    lBound: number;
+    elements: number;
+  };
+}
+
+export interface BeckhoffSymbol {
+  name: string;
+  type: string;
+  comment?: string;
+  arrayid?: number;
+}
 
 type Adapter = Pick<AdapterInstance, 'log' | 'config'>;
 
@@ -31,7 +52,7 @@ export class PlcStructure {
     }
   }
 
-  private async _tpyData(): Promise<void> {
+  private _tpyData(): void {
     if (!this._adapter.config.tpyFile) {
       this._adapter.log.error(
         'No *.tpy File was Uploaded. Please upload a *.tpy File or use an other Mode in Config Window.'
@@ -41,29 +62,61 @@ export class PlcStructure {
       return;
     }
 
-    try {
-      const result = await parseStringPromise(this._adapter.config.tpyFile.data, { normalize: true });
+    let wait = true;
 
-      if (!result.PlcProjectInfo.DataTypes[0].DataType) {
-        this._adapter.log.error(`No Datatyps found in ${this._adapter.config.tpyFile.name} File`);
+    parseString(
+      this._adapter.config.tpyFile.data,
+      {
+        normalize: true,
+        ignoreAttrs: true,
+        explicitArray: false,
+        tagNameProcessors: [firstCharLowerCase],
+        valueProcessors: [parseNumbers, parseBooleans],
+      },
+      (err, result) => {
+        if (err) {
+          this._adapter.log.error(
+            'No proper *.tpy File was Uploaded. Please upload a proper *.tpy File or use an other Mode in Config Window.'
+          );
+          this._adapter.log.error(err.message);
+
+          wait = false;
+          return;
+        }
+
+        writeFileSync('./datatyps.ts', JSON.stringify(result.plcProjectInfo.dataTypes.dataType, undefined, 2));
+        writeFileSync('./symbols.ts', JSON.stringify(result.plcProjectInfo.symbols.symbol, undefined, 2));
+
+        if (!result?.plcProjectInfo?.dataTypes?.dataType) {
+          this._adapter.log.error(`No Datatyps found in ${this._adapter.config.tpyFile?.name} File`);
+
+          this._datatyps = null;
+
+          wait = false;
+          return;
+        }
+
+        if (!result?.plcProjectInfo?.symbols?.symbol) {
+          this._adapter.log.error(`No Symbols found in ${this._adapter.config.tpyFile?.name} File`);
+
+          this._symbols = null;
+
+          wait = false;
+          return;
+        }
+
+        this._datatyps =
+          result.plcProjectInfo.dataTypes.dataType?.length >= 1 ? result.plcProjectInfo.dataTypes.dataType : null;
+
+        this._symbols = result.plcProjectInfo.symbols.symbol?.length >= 1 ? result.plcProjectInfo.symbols.symbol : null;
+
+        wait = false;
       }
+    );
 
-      if (!result.PlcProjectInfo.Symbols[0].Symbol) {
-        this._adapter.log.error(`No Symbols found in ${this._adapter.config.tpyFile.name} File`);
-      }
-
-      this._writeNewData(result.PlcProjectInfo.DataTypes[0].DataTyp, result.PlcProjectInfo.Symbols[0].Symbol);
-      return;
-    } catch (e) {
-      const error = e as Error;
-
-      this._adapter.log.error(
-        'No proper *.tpy File was Uploaded. Please upload a proper *.tpy File or use an other Mode in Config Window.'
-      );
-      this._adapter.log.error(error.message);
+    while (wait) {
+      // Do nothing and wait
     }
-
-    this._writeNewData(null, null);
   }
 
   private async _plcData(): Promise<void> {

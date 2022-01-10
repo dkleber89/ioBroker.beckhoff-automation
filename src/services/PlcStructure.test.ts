@@ -1,3 +1,5 @@
+import { readFileSync } from 'fs';
+
 import { AdapterInstance } from '@iobroker/adapter-core';
 import { utils } from '@iobroker/testing';
 import { expect } from 'chai';
@@ -9,7 +11,14 @@ import { nodeAdsMock } from '../../test/utils/nodeAdsMock';
 import { RuntimeType } from '../Beckhoff';
 import { PlcStructure } from './PlcStructure';
 
-const { adapter, database } = utils.unit.createMocks({});
+const plcStructure = readFileSync('./test/utils/mockData/plcStructure.tpy', { encoding: 'utf-8' });
+
+const config: Partial<ioBroker.AdapterConfig> = {
+  beckhoffRuntimeType: RuntimeType.TwinCat3,
+  tpyFile: { name: 'plcStructure.tpy', data: plcStructure },
+};
+
+const { adapter, database } = utils.unit.createMocks({ config });
 
 describe('plcStructure', function () {
   afterEach(() => {
@@ -70,7 +79,18 @@ describe('plcStructure', function () {
     });
   });
 
-  it('should generate plc structure from tpy file', function () {
-    // TODO
+  it('should generate plc structure from tpy file', function (done) {
+    adapter.config.beckhoffRuntimeType = RuntimeType.TwinCat2WithConfigFile;
+
+    const nodeAdsClient = nodeAdsMock(RuntimeType.TwinCat2WithConfigFile);
+
+    const plcStructure = new PlcStructure(adapter as unknown as AdapterInstance, nodeAdsClient, true, () => {
+      done(new Error('onError called'));
+    });
+
+    plcStructure.onUpdated((datatyps, symbols) => {
+      console.log(datatyps);
+      console.log(symbols);
+    });
   });
 });
