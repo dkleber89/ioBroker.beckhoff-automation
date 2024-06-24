@@ -23,65 +23,39 @@ class BeckhoffAutomation extends utils.Adapter {
     // Initialize your adapter here
     this.setState('info.connection', false, true); // Reset the connection indicator during startup
 
-    this._beckhoff = new Beckhoff(this);
+    // Preparations
+    await this.createDeviceAsync('plc');
+    const channels = await this.getChannelsOfAsync('plc');
 
-    /*
-		For every state in the system there has to be also an object of type state
-		Here a simple template for a boolean variable named "testVariable"
-		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-		*/
-    await this.setObjectNotExistsAsync('testVariable', {
-      type: 'state',
-      common: {
-        name: 'testVariable',
-        type: 'boolean',
-        role: 'indicator',
-        read: true,
-        write: true,
-      },
-      native: {},
+    // Delete unneccessary channels
+    channels.forEach(channel => {
+      // eslint-disable-next-line no-underscore-dangle
+      if (!this.config.targetVariableTables.includes(channel._id)) {
+        // eslint-disable-next-line no-underscore-dangle
+        this.deleteChannelAsync(channel._id);
+      }
     });
 
-    // In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-    this.subscribeStates('testVariable');
-    // You can also add a subscription for multiple states. The following line watches all states starting with "lights."
-    // this.subscribeStates('lights.*');
-    // Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
-    // this.subscribeStates('*');
+    // Start Beckoff
+    this._beckhoff = new Beckhoff(this);
 
-    /*
-			setState examples
-			you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-		*/
-    // the variable testVariable is set to true as command (ack=false)
-    await this.setStateAsync('testVariable', true);
-
-    // same thing, but the value is flagged "ack"
-    // ack should be always set to true if the value is received from or acknowledged from the target system
-    await this.setStateAsync('testVariable', { val: true, ack: true });
-
-    // same thing, but the state is deleted after 30s (getState will return null afterwards)
-    await this.setStateAsync('testVariable', { val: true, ack: true, expire: 30 });
-
-    // examples for the checkPassword/checkGroup functions
-    let result = await this.checkPasswordAsync('admin', 'iobroker');
-    this.log.info(`check user admin pw iobroker: ${result}`);
-
-    result = await this.checkGroupAsync('admin', 'admin');
-    this.log.info(`check group user admin group admin: ${result}`);
+    // Subscribe all States in plc channel
+    this.subscribeStates('plc.*');
   }
 
   /**
    * Is called when adapter shuts down - callback has to be called under any circumstances!
    */
-  // TODO
-  // eslint-disable-next-line class-methods-use-this
   private async onUnload(callback: () => void): Promise<void> {
     try {
       this._beckhoff?.killAll();
 
       callback();
     } catch (e) {
+      const error = e as Error;
+
+      this.log.error(error.message);
+
       callback();
     }
   }

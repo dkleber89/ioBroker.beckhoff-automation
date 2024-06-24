@@ -78,7 +78,10 @@ const supportedDatatyps: SupportedDatatyps = {
   'STRING(80)': STRING,
 };
 
-type Adapter = Pick<AdapterInstance, 'log' | 'config'>;
+type Adapter = Pick<
+  AdapterInstance,
+  'log' | 'config' | 'getChannelsAsync' | 'createChannelAsync' | 'getStatesOfAsync' | 'namespace'
+>;
 
 export class VariableTable {
   private _targetVariableTable: string;
@@ -95,7 +98,14 @@ export class VariableTable {
     datatyps?: AdsDatatyp[] | null,
     symbols?: AdsSymbol[] | null
   ) {
-    this._adapter = { log: adapterInstance.log, config: adapterInstance.config };
+    this._adapter = {
+      log: adapterInstance.log,
+      config: adapterInstance.config,
+      getChannelsAsync: adapterInstance.getChannelsAsync,
+      createChannelAsync: adapterInstance.createChannelAsync,
+      getStatesOfAsync: adapterInstance.getStatesOfAsync,
+      namespace: adapterInstance.namespace,
+    };
     this._targetVariableTable = targetVariableTable;
 
     this.update(datatyps ?? null, symbols ?? null);
@@ -230,5 +240,22 @@ export class VariableTable {
     this._adapter.log.error(
       `Unexpected Error in createHandles for Variable Table (${this._targetVariableTable}) occurred. No symbol provided when on Level 0 in Tree`
     );
+  }
+
+  private async _syncTableAndStates(): Promise<void> {
+    const channel = (await this._adapter.getChannelsAsync('plc')).find(
+      // eslint-disable-next-line no-underscore-dangle
+      channel => channel._id === this._targetVariableTable
+    );
+
+    if (channel) {
+      // eslint-disable-next-line no-underscore-dangle
+      const states = await this._adapter.getStatesOfAsync('plc', channel._id);
+
+      // eslint-disable-next-line no-underscore-dangle
+      this._adapter.log.debug(states.length >= 1 ? states[0]._id : 'Nothing Found');
+    } else {
+      this._adapter.createChannelAsync('plc', this._targetVariableTable);
+    }
   }
 }
